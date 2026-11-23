@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TAROT Iron Man 680 Pro Hexacopter (Hexa X) - new Gazebo (gz-sim) port.
+
+     Ported from Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/tarot680pro/tarot680pro.sdf
+     (that file's header has the rotor index/angle/direction derivation -
+     unchanged here). Physical values below (mass, inertia, rotor
+     positions, motorConstant/momentConstant/maxRotVelocity/time
+     constants/drag coefficients, turningDirection per rotor) are copied
+     1:1 from that flight-tested Classic model, NOT re-tuned. Only the
+     plugin/sensor syntax changed, to match gz-sim conventions
+     (MulticopterMotorModel instead of libgazebo_motor_model.so, built-in
+     <sensor> tags on base_link instead of separate imu/mag/baro plugins,
+     model://optical_flow + model://LW20 includes instead of
+     model://px4flow + model://lidar).
+
+     Camera sensors (front/down) are plain gz-sim <sensor type="camera">
+     tags - world-level GstCameraSystem (see Tools/simulation/gz/server.config)
+     streams these to QGC the same way Classic's camera_manager_plugin did.
+     There is no gz-sim equivalent of Classic's libgazebo_ros_camera.so
+     (direct-to-ROS2-topic camera plugin) - bridging /camera/image_raw now
+     needs a `ros_gz_bridge`/`ros_gz_image` node outside this SDF.
+
+     Downward LW20 lidar placement (z=-0.1) and optical_flow placement
+     (z=-0.1, copied from Classic's px4flow offset) are carried over
+     verbatim from the Classic model's include poses - not re-verified
+     against the gz-sim LW20/optical_flow models' own internal pose
+     conventions (see x500_lidar_down/x500_flow for the reference
+     pattern this follows). Re-check clearance under the airframe mesh
+     if the rangefinder/flow readings look wrong in testing.
+-->
+<sdf version='1.9'>
+  <model name='tarot680pro'>
+    <pose>0 0 0 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+
+    <link name='base_link'>
+      <inertial>
+        <mass>2.70</mass>
+        <inertia>
+          <ixx>0.062</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.062</iyy>
+          <iyz>0</iyz>
+          <izz>0.122</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay />
+
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><box><size>0.195 0.195 0.06</size></box></geometry>
+      </collision>
+      <!-- 2026-11-11: skid 충돌을 보이는 다리(frame_680pro.stl)에 맞춤. 메쉬 다리 끝은 z=-0.243,
+           반경 ~0.19m인데 충돌은 z=-0.19, y=±0.13이라 착지하면 다리가 바닥/상판에 5cm 파묻혀 보였음.
+           (이전: pose 0 ±0.13 -0.18, size 0.30x0.02x0.02 — model.sdf.bak_skid) -->
+      <collision name='skid_left'>
+        <pose>0 0.17 -0.233 0 0 0</pose>
+        <geometry><box><size>0.38 0.02 0.02</size></box></geometry>
+      </collision>
+      <collision name='skid_right'>
+        <pose>0 -0.17 -0.233 0 0 0</pose>
+        <geometry><box><size>0.38 0.02 0.02</size></box></geometry>
+      </collision>
+
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0.5236</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/frame_680pro.stl</uri>
+          </mesh>
+        </geometry>
+        <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material>
+      </visual>
+
+      <sensor name="imu_sensor" type="imu">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <!-- Noise modeled after ICM-42688-P (Pixhawk 6X): gyro 2.8 mdps/rtHz, accel 70 ug/rtHz, x sqrt(125 Hz) -->
+            <!-- 0.0313 deg/s rms converted to rad/s -->
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.000546</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.000546</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.000546</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <!-- Noise modeled after ICM-42688-P (Pixhawk 6X): gyro 2.8 mdps/rtHz, accel 70 ug/rtHz, x sqrt(125 Hz) -->
+            <!-- 0.783 mg-rms converted to m/ss -->
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00768</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00768</stddev>
+              </noise>
+            </y>
+            <!-- same on Z -->
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00768</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <!-- BMM150 (Pixhawk 6X): 0.3 uT rms (high-accuracy preset, Bosch flyer) = 3 mG = 0.003 gauss.
+          Measured in this build: gz stddev is applied directly to the gauss output. -->
+          <x>
+            <noise type="gaussian">
+              <stddev>0.003</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.003</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.003</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <!-- BMP388 (Pixhawk 6X): ~0.5 Pa rms typ., standard resolution mode -->
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>0.5</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <gz_frame_id>base_link</gz_frame_id>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+
+    <!-- Rotor links: pose/mass/inertia copied verbatim from the Classic model. -->
+    <link name='rotor_0'>
+      <pose>0 -0.345 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_0_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_0_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.8 0.4 0 1</ambient><diffuse>0.8 0.4 0 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_0_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <link name='rotor_1'>
+      <pose>0 0.345 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_1_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_1_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_1_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <link name='rotor_2'>
+      <pose>0.2988 0.1725 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_2_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_2_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.8 0.4 0 1</ambient><diffuse>0.8 0.4 0 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_2_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <link name='rotor_3'>
+      <pose>-0.2988 -0.1725 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_3_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_3_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_3_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <link name='rotor_4'>
+      <pose>0.2988 -0.1725 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_4_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_4_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.8 0.4 0 1</ambient><diffuse>0.8 0.4 0 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_4_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <link name='rotor_5'>
+      <pose>-0.2988 0.1725 0.06 0 0 0</pose>
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <inertial>
+        <mass>0.017</mass>
+        <inertia><ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz></inertia>
+      </inertial>
+      <collision name='rotor_5_collision'>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_5_visual'>
+        <geometry><mesh><scale>0.001 0.001 0.001</scale><uri>model://tarot680pro/meshes/prop_13x5.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+      </visual>
+    </link>
+    <joint name='rotor_5_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper></limit>
+        <dynamics><damping>0.005</damping><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+
+    <!-- Motor models: motorConstant/maxRotVelocity/momentConstant/time
+         constants/drag coefficients and per-rotor turningDirection copied
+         verbatim from the Classic model's libgazebo_motor_model.so plugins. -->
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+
+    <!-- Downward rangefinder (EKF2_RNG_CTRL) - LW20, same role as Classic's model://lidar. -->
+    <include merge='true'>
+      <uri>model://LW20</uri>
+      <pose relative_to="base_link">0 0 -0.1 0 1.57 0</pose>
+    </include>
+    <joint name="lidar_model_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>lw20_link</child>
+      <pose relative_to="base_link">0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="lidar_sensor_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar_sensor_link</child>
+    </joint>
+    <link name="lidar_sensor_link">
+      <pose relative_to="base_link">0 0 -0.1 0 1.57 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia><ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz><ixy>0.0</ixy><ixz>0.0</ixz><iyz>0.0</iyz></inertia>
+      </inertial>
+      <sensor name='lidar' type='gpu_lidar'>
+        <gz_frame_id>lidar_sensor_link</gz_frame_id>
+        <pose>0 0 0 3.14 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray>
+          <scan>
+            <horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal>
+            <vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical>
+          </scan>
+          <range><min>0.1</min><max>100.0</max><resolution>0.01</resolution></range>
+        </ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+
+    <!-- Optical flow (EKF2_OF_CTRL) - same role as Classic's model://px4flow. -->
+    <include merge='true'>
+      <uri>model://optical_flow</uri>
+      <pose relative_to="base_link">0.05 0 -0.1 0 0 0</pose>
+    </include>
+    <joint name="optical_flow_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>flow_link</child>
+      <pose relative_to="base_link">0.05 0 -0.1 0 1.5707 0</pose>
+    </joint>
+
+    <!-- Fixed front camera - same pose/FOV/resolution as Classic's camera_front_link. -->
+    <link name='camera_front_link'>
+      <!-- 2026-11-11: 수평 -> 35도 아래로(pitch 0.61). 수평이면 화면 절반이 하늘이고 바닥은 3m 앞부터라
+           앞쪽 칸의 ArUco를 미리 찾는 용도로 기울임 -->
+      <pose relative_to="base_link">0.1 0 0.02 0 0.6109 0</pose>
+      <inertial>
+        <mass>0.03</mass>
+        <inertia><ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz></inertia>
+      </inertial>
+      <visual name='camera_front_visual'>
+        <geometry><box><size>0.02 0.02 0.02</size></box></geometry>
+        <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+      </visual>
+      <sensor name='camera_front' type='camera'>
+        <gz_frame_id>camera_front_link</gz_frame_id>
+        <camera>
+          <!-- 2026-11-11: 라즈베리파이 글로벌셔터 카메라(IMX296, 1456x1088, 3.45um) + 16mm 망원렌즈.
+               fx = 16mm/3.45um = 4637.7 px, HFOV = 2*atan(728/4637.7) = 0.3116 rad (17.85도).
+               이전: HFOV 2.0 rad(115도), 640x360 (백업 model.sdf.bak_cam115) -->
+          <horizontal_fov>1.1206</horizontal_fov>  <!-- 2026-11-12 렌즈 배치 1등: 4mm, fx=1159.4px, 64.2x50.3도 (이전 하향2.8/전방44.6 백업 .bak_d28_f446) -->
+          <image><width>1456</width><height>1088</height></image>
+          <clip><near>0.05</near><far>15000</far></clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>  <!-- 2026-11-11 RPi GS 최대 60fps (이전 30) -->
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+    <joint name='camera_front_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>camera_front_link</child>
+    </joint>
+
+    <!-- Fixed down camera - same pose/FOV/resolution as Classic's camera_down_link.
+         NOTE: this sensor alone does not reach ROS2 /camera/image_raw under
+         gz-sim - run a ros_gz_bridge/ros_gz_image node against this sensor's
+         gz topic (world/<world>/model/tarot680pro/link/camera_down_link/sensor/camera_down/image)
+         to get that topic back, same as the aruco_tracker/KASA mission node expect. -->
+    <link name='camera_down_link'>
+      <!-- 2026-11-10: -0.25 -> -0.15. skid 바닥(-0.19)보다 6cm 아래에 있어서 착지하면
+           카메라가 버티포트 상판 속으로 파묻혀 판 밑 바닥을 찍었음(캠 화면 회색 블록).
+           비행 고도 2m 기준 화각/검출에는 영향 거의 없음(지면까지 거리 +0.1m). -->
+      <pose relative_to="base_link">0 0 -0.15 0 1.5708 0</pose>
+      <inertial>
+        <mass>0.03</mass>
+        <inertia><ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz></inertia>
+      </inertial>
+      <!-- 2026-11-10: camera_down_visual (0.02 box) removed. It sat directly under the
+           downward LW20 lidar (z=-0.1) and gpu_lidar hits visuals, so range read a constant
+           0.14 m at any altitude -> optical-flow velocity scaled ~18x too small -> EKF thought
+           it was stationary while drifting away, rejected GPS, then jumped. Sensor unchanged. -->
+      <sensor name='camera_down' type='camera'>
+        <gz_frame_id>camera_down_link</gz_frame_id>
+        <camera>
+          <!-- 2026-11-11: 라즈베리파이 글로벌셔터 카메라(IMX296, 1456x1088, 3.45um) + 16mm 망원렌즈.
+               fx = 16mm/3.45um = 4637.7 px, HFOV = 2*atan(728/4637.7) = 0.3116 rad (17.85도).
+               이전: HFOV 2.0 rad(115도), 640x360 (백업 model.sdf.bak_cam115) -->
+          <horizontal_fov>1.1206</horizontal_fov>  <!-- 2026-11-12 렌즈 배치 1등: 4mm, fx=1159.4px, 64.2x50.3도 (이전 하향2.8/전방44.6 백업 .bak_d28_f446) -->
+          <image><width>1456</width><height>1088</height></image>
+          <!-- 2026-11-10: near 0.05->0.01. 착지 시 상판까지 0.04m라 상판이 잘려 판 밑 바닥이 보였음 -->
+          <clip><near>0.01</near><far>15000</far></clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>  <!-- 2026-11-11 RPi GS 최대 60fps (이전 30) -->
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+    <joint name='camera_down_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>camera_down_link</child>
+    </joint>
+
+  </model>
+</sdf>

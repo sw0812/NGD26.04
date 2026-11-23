@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    cam_base_topic: camera_front/image_raw
+    marker_dict: 5X5_50
+    marker_size: 0.5
+    publish_tf: false
+    image_sub_qos: {reliability: 2, durability: 2, depth: 1}

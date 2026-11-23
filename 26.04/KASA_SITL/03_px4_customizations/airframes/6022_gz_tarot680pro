@@ -1,0 +1,122 @@
+#!/bin/sh
+#
+# @name TAROT Iron Man 680 Pro Hexacopter (SITL, new Gazebo / gz-sim)
+#
+# @type Hexarotor x
+# @class Copter
+#
+# Ported from 6021_gazebo-classic_tarot680pro. All physical/control-tuning
+# params below (CA_ROTOR*, MC_*/MPC_* gains, EKF2_*, COM_ARM_WO_GPS) are
+# copied verbatim from that file - same airframe, same physics, only the
+# simulator backend differs (PX4_SIMULATOR=gz instead of none/jmavlink +
+# Gazebo Classic process launch). See that file's own comments for the
+# history/rationale behind each value - not re-derived here.
+
+. ${R}etc/init.d/rc.mc_defaults
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=kasa_indoor_search}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=tarot680pro}
+
+param set-default SIM_GZ_EN 1
+
+param set-default MAV_TYPE 13
+
+# Hexarotor X, arm radius 0.345 m, body frame FRD (x fwd, y right).
+# Identical to 6021_gazebo-classic_tarot680pro - control allocation
+# geometry does not depend on the simulator backend.
+# 2026-11-10: KM signs reverted to doc convention (ccw<->+0.05, cw<->-0.05) for gz-sim,
+# matching the official gz x500 airframe. Classic-flipped signs spun up to ~700deg/s and flipped (A/B tested twice).
+param set-default CA_AIRFRAME 0
+param set-default CA_ROTOR_COUNT 6
+
+param set-default CA_ROTOR0_PX   0.0
+param set-default CA_ROTOR0_PY   0.345
+param set-default CA_ROTOR0_KM  -0.05
+
+param set-default CA_ROTOR1_PX   0.0
+param set-default CA_ROTOR1_PY  -0.345
+param set-default CA_ROTOR1_KM   0.05
+
+param set-default CA_ROTOR2_PX   0.2988
+param set-default CA_ROTOR2_PY  -0.1725
+param set-default CA_ROTOR2_KM  -0.05
+
+param set-default CA_ROTOR3_PX  -0.2988
+param set-default CA_ROTOR3_PY   0.1725
+param set-default CA_ROTOR3_KM   0.05
+
+param set-default CA_ROTOR4_PX   0.2988
+param set-default CA_ROTOR4_PY   0.1725
+param set-default CA_ROTOR4_KM   0.05
+
+param set-default CA_ROTOR5_PX  -0.2988
+param set-default CA_ROTOR5_PY  -0.1725
+param set-default CA_ROTOR5_KM  -0.05
+
+# gz-sim actuator output: SIM_GZ_EC_FUNC<n> picks which output function
+# (101-106 = Motor1-6, same numbering as PWM_MAIN_FUNC on the Classic
+# airframe) drives gz_x500's command/motor_speed topic for that rotor.
+# MIN/MAX copied from every other gz_x500* airframe in this tree
+# (4001_gz_x500 etc.) - this is the actuator PWM-range convention, not a
+# physical tuning value; actual thrust response comes from the model.sdf
+# MulticopterMotorModel plugin's motorConstant/maxRotVelocity.
+param set-default SIM_GZ_EC_FUNC1 101
+param set-default SIM_GZ_EC_FUNC2 102
+param set-default SIM_GZ_EC_FUNC3 103
+param set-default SIM_GZ_EC_FUNC4 104
+param set-default SIM_GZ_EC_FUNC5 105
+param set-default SIM_GZ_EC_FUNC6 106
+
+param set-default SIM_GZ_EC_MIN1 150
+param set-default SIM_GZ_EC_MIN2 150
+param set-default SIM_GZ_EC_MIN3 150
+param set-default SIM_GZ_EC_MIN4 150
+param set-default SIM_GZ_EC_MIN5 150
+param set-default SIM_GZ_EC_MIN6 150
+
+param set-default SIM_GZ_EC_MAX1 1000
+param set-default SIM_GZ_EC_MAX2 1000
+param set-default SIM_GZ_EC_MAX3 1000
+param set-default SIM_GZ_EC_MAX4 1000
+param set-default SIM_GZ_EC_MAX5 1000
+param set-default SIM_GZ_EC_MAX6 1000
+
+# AUW 2.8 kg vs 6 x 1.58 kg max thrust -> T/W 3.4 (same as Classic airframe)
+param set-default MPC_THR_HOVER 0.54
+
+# Rate/attitude gains - identical to 6021_gazebo-classic_tarot680pro
+# (tuned against the same physical model; simulator backend does not
+# change the airframe's mass/inertia/motor response).
+param set-default MC_ROLLRATE_P  0.18
+param set-default MC_ROLLRATE_I  0.22
+param set-default MC_ROLLRATE_D  0.004
+param set-default MC_PITCHRATE_P 0.18
+param set-default MC_PITCHRATE_I 0.22
+param set-default MC_PITCHRATE_D 0.004
+param set-default MC_YAWRATE_P   0.6
+param set-default MC_YAWRATE_I   0.10
+
+param set-default MC_ROLL_P      6.0
+param set-default MC_PITCH_P     6.0
+param set-default MC_YAW_P       2.6
+
+# Camera platform limits, not a racer.
+param set-default MPC_XY_VEL_MAX 8.0
+param set-default MPC_Z_VEL_MAX_UP 3.0
+param set-default MPC_Z_VEL_MAX_DN 1.5
+param set-default MPC_TILTMAX_AIR 35.0
+param set-default MPC_LAND_SPEED 0.7
+param set-default MPC_XY_VEL_D_ACC 0.35
+
+# EKF2/GPS: copied as-is from 6021_gazebo-classic_tarot680pro, NOT
+# changed here. That file's own comments have the full history (pure
+# zero-GPS arming is architecturally blocked in EKF2 - see
+# estimatorCheck.cpp/optical_flow_control.cpp/range_height_control.cpp/
+# terrain_control.cpp findings) - same conclusion applies here unchanged,
+# this is a simulator-backend port, not a re-investigation of that issue.
+param set-default EKF2_OF_CTRL 1
+param set-default EKF2_RNG_CTRL 2
+param set-default EKF2_GPS_CTRL 3   # 2026-11-09: 사용자 승인으로 0->3 (GPS 없이는 EKF2 arm 불가)
+param set-default COM_ARM_WO_GPS 1
+param set-default COM_RC_IN_MODE 4   # 2026-11-09: 사용자 승인. 오프보드 전용 비행, 스틱 입력 요구 안 함

@@ -1,0 +1,4 @@
+<launch>
+  <!-- 웹캠 + YOLO 인식 노드 -->
+  <node name="webcam_yolo_node" pkg="camera_real" type="webcam.py" output="screen" required="true" />
+</launch>

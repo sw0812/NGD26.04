@@ -1,0 +1,1338 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-09 17:21:08 ===
+[aruco] [INFO] [1788942070.890036747] [aruco_tracker]: Configuring
+[aruco] [INFO] [1788942070.890522327] [aruco_tracker]: Camera Base Topic: camera/image_raw
+[aruco] [INFO] [1788942070.890612921] [aruco_tracker]: Assume images are rectified: NO
+[aruco] [INFO] [1788942070.890681211] [aruco_tracker]: Marker detections will be published in the camera frame
+[aruco] [INFO] [1788942070.890748828] [aruco_tracker]: Marker Dictionary name: 5X5_50
+[aruco] [INFO] [1788942070.890823742] [aruco_tracker]: TF publishing is enabled
+[aruco] [INFO] [1788942070.890919425] [aruco_tracker]: Marker size: 0.15
+[aruco] [INFO] [1788942070.890984866] [aruco_tracker]: Aruco Parameters:
+[aruco] [INFO] [1788942070.891065924] [aruco_tracker]:  * adaptiveThreshWinSizeMin: 3
+[aruco] [INFO] [1788942070.891133254] [aruco_tracker]:  * adaptiveThreshWinSizeMax: 23
+[aruco] [INFO] [1788942070.891195367] [aruco_tracker]:  * adaptiveThreshWinSizeStep: 10
+[aruco] [INFO] [1788942070.891261769] [aruco_tracker]:  * adaptiveThreshConstant: 7
+[aruco] [INFO] [1788942070.891327371] [aruco_tracker]:  * minMarkerPerimeterRate: 0.03
+[aruco] [INFO] [1788942070.891391532] [aruco_tracker]:  * maxMarkerPerimeterRate: 4
+[aruco] [INFO] [1788942070.891453870] [aruco_tracker]:  * polygonalApproxAccuracyRate: 0.03
+[aruco] [INFO] [1788942070.891516655] [aruco_tracker]:  * minCornerDistanceRate: 0.05
+[aruco] [INFO] [1788942070.891585553] [aruco_tracker]:  * minDistanceToBorder: 3
+[aruco] [INFO] [1788942070.891648499] [aruco_tracker]:  * minMarkerDistanceRate: 0.05
+[aruco] [INFO] [1788942070.891709876] [aruco_tracker]:  * markerBorderBits: 1
+[aruco] [INFO] [1788942070.891771830] [aruco_tracker]:  * perspectiveRemovePixelPerCell: 4
+[aruco] [INFO] [1788942070.891830199] [aruco_tracker]:  * perspectiveRemoveIgnoredMarginPerCell: 0.13
+[aruco] [INFO] [1788942070.891896345] [aruco_tracker]:  * maxErroneousBitsInBorderRate: 0.35
+[aruco] [INFO] [1788942070.891959098] [aruco_tracker]:  * minOtsuStdDev: 5
+[aruco] [INFO] [1788942070.892020124] [aruco_tracker]:  * errorCorrectionRate: 0.6
+[ERR] [aruco] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[aruco] [INFO] [1788942070.892093437] [aruco_tracker]:  * cornerRefinementMethod: 2 (CONTOUR)
+[aruco] [INFO] [1788942070.892157311] [aruco_tracker]:  * cornerRefinementWinSize: 5
+[aruco] [INFO] [1788942070.892220193] [aruco_tracker]:  * cornerRefinementMaxIterations: 30
+[aruco] [INFO] [1788942070.892281378] [aruco_tracker]:  * cornerRefinementMinAccuracy: 0.1
+[aruco] [INFO] [1788942070.897008982] [aruco_tracker]: Activating
+[aruco] [INFO] [1788942070.897224732] [aruco_tracker]: Waiting for first camera info...
+[xrce] [35m[1788942071.645990][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1788942071.646446][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[camera] [INFO] [1788942071.799820790] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1788942071.800356419] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1788942071.804874898] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1788942071.805995789] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1788942071.806111536] [usb_cam]: Starting 'default_cam' (/dev/video0) at 1280x720 via mmap (mjpeg2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'char*'
+[qgc] qt.multimedia.symbolsresolver: Couldn't load pipewire-0.3 library
+[qgc] qt.multimedia.symbolsresolver: Couldn't resolve pipewire-0.3 symbols
+[qgc] Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+[qgc] Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+[qgc] If this causes problems, reconfigure your locale. See the locale(1) manual
+[qgc] for more information.
+[qgc] Error: A second instance of QGroundControl is already running. Please close the other instance and try again.
+[ERR] [qgc] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[qgc] [프로세스 종료됨]
+[camera] [프로세스 종료됨]
+[qgc] qt.multimedia.symbolsresolver: Couldn't load pipewire-0.3 library
+[qgc] qt.multimedia.symbolsresolver: Couldn't resolve pipewire-0.3 symbols
+[qgc] Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+[qgc] Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+[qgc] If this causes problems, reconfigure your locale. See the locale(1) manual
+[qgc] for more information.
+[qgc] Error: A second instance of QGroundControl is already running. Please close the other instance and try again.
+[ERR] [qgc] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[qgc] [프로세스 종료됨]
+[reboot] Pixhawk 재부팅 명령 전송됨
+[aruco] [INFO] [1788942215.092034219] [aruco_tracker]: First camera info retrieved.
+[mission] [INFO] [1788942300.964829328] [search_phase_node]: 탐색 페이즈 시작 — 방문 순서 28칸, 목표 마커 4개
+[qgc] qt.multimedia.symbolsresolver: Couldn't load pipewire-0.3 library
+[qgc] qt.multimedia.symbolsresolver: Couldn't resolve pipewire-0.3 symbols
+[qgc] Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+[qgc] Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+[qgc] If this causes problems, reconfigure your locale. See the locale(1) manual
+[qgc] for more information.
+[qgc] API.QGCApplication: Qt lib localization for "C" is not present
+[qgc]      0.047 Using Qt multimedia with FFmpeg version 7.1.3 LGPL version 2.1 or later - qt.multimedia.ffmpeg - (unknown:0)
+[qgc]      5.481 Warning: qrc:/qml/QGroundControl/Toolbar/MainStatusIndicatorOfflinePage.qml:93:25: Unable to assign [undefined] to bool - default - (unknown:93)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]      5.481 Warning: qrc:/qml/QGroundControl/Toolbar/MainStatusIndicatorOfflinePage.qml:93:25: Unable to assign [undefined] to bool - default - (unknown:93)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]      5.482 Warning: qrc:/qml/QGroundControl/Toolbar/MainStatusIndicatorOfflinePage.qml:93:25: Unable to assign [undefined] to bool - default - (unknown:93)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]      5.483 Warning: qrc:/qml/QGroundControl/Toolbar/MainStatusIndicatorOfflinePage.qml:93:25: Unable to assign [undefined] to bool - default - (unknown:93)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]      5.484 Warning: qrc:/qml/QGroundControl/Toolbar/MainStatusIndicatorOfflinePage.qml:93:25: Unable to assign [undefined] to bool - default - (unknown:93)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]     71.066 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]     72.011 Warning: Locale "C" not found in translation json for "COMP_METADATA_TYPE_PARAMETER" - ComponentInformation.ComponentInformationTranslation - (ComponentInformationTranslation::getUrlFromSummaryJson:62)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]     72.143 Warning: Locale "C" not found in translation json for "COMP_METADATA_TYPE_EVENTS" - ComponentInformation.ComponentInformationTranslation - (ComponentInformationTranslation::getUrlFromSummaryJson:62)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    136.450 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    136.450 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    183.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    183.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    183.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    183.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    195.332 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    195.332 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    195.332 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    195.332 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    214.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    214.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    214.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    214.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    216.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    216.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    216.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    216.327 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    218.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    218.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    218.327 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    218.327 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    221.331 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    221.331 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    221.331 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    221.331 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    223.331 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    223.331 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    223.331 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    223.331 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    227.334 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    227.334 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    227.334 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    227.334 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    235.334 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    235.334 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    235.334 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    235.334 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    242.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    242.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    242.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    242.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    253.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    253.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    253.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    253.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    258.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    258.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    258.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    258.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    275.334 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    275.334 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    275.334 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    275.334 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    286.335 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    286.335 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    286.335 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    286.335 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    288.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    288.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    288.327 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    288.327 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    305.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    305.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    305.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    305.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    309.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    309.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    309.327 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    309.327 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    312.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    312.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    312.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    312.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    314.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    314.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    314.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    314.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    320.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    320.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    320.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    320.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    323.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    323.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    323.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    323.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    324.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    324.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    324.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    324.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    326.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    326.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    326.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    326.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    327.332 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    327.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    327.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    327.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    330.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    330.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    330.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    330.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    335.333 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    335.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    335.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    335.334 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.331 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.331 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.331 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    340.328 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    340.328 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    340.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    340.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    342.332 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    342.332 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    342.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    342.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    343.333 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    343.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    343.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    343.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    345.333 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    345.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    345.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    345.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    351.335 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    351.335 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    351.335 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    351.335 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    352.343 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    352.343 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    352.343 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    352.343 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    353.332 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    353.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    353.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    353.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    357.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    357.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    357.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    357.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    364.325 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    364.325 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    364.325 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    364.325 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    366.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    366.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    366.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    366.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    367.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    367.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    367.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    367.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    372.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    372.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    372.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    372.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    375.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    375.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    375.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    375.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    376.341 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    376.341 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    376.341 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    376.341 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    385.325 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    385.325 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    385.325 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    385.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    389.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    389.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    389.328 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    389.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    408.335 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    408.336 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    408.336 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    408.336 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    410.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    410.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    410.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    410.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    413.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    413.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    413.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    413.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    416.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    416.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    416.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    416.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    424.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    424.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    424.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    424.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    425.332 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    425.332 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    425.332 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    425.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    427.331 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    427.332 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    427.332 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    427.332 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    432.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    432.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    432.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    432.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    433.330 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    433.330 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    433.330 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    433.330 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    435.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    435.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    435.327 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    435.327 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    436.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    436.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    436.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    436.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    440.333 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    440.333 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    440.333 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    440.333 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    443.337 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    443.337 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    443.337 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    443.337 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    446.331 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    446.331 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    446.332 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    446.332 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    452.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    454.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    454.765 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    455.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    457.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    458.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    460.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    461.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    463.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    464.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    466.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    467.764 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    469.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    470.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    472.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    473.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    475.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    476.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    478.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    479.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    481.324 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    482.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    484.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    485.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    487.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    488.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    490.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    491.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    493.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    494.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    496.319 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    497.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    499.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    500.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    502.316 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    503.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    505.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    506.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    508.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    509.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    511.320 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    512.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    514.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    515.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    517.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    518.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    520.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    521.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    523.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    524.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    526.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    527.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    529.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    530.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    532.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    533.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    535.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    536.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    538.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    539.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    541.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    542.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    544.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    545.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    547.325 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    547.325 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    547.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    547.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    547.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    548.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    550.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    551.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    553.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    554.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    556.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    557.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    559.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    560.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    562.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    563.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    565.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    566.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    568.316 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    569.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    571.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    572.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    574.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    575.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    577.321 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    578.764 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    578.942 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    578.942 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    578.942 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    578.942 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    580.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    581.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    583.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    584.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    586.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    587.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    589.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    590.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    592.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    593.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    595.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    596.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    598.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    599.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    601.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    602.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    604.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    605.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    607.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    608.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    610.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    611.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    613.320 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    614.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    616.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    617.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    619.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    620.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    622.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    623.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    625.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    626.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    628.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    629.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    631.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    632.327 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    632.327 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    632.327 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    632.328 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    632.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    634.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    635.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    637.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    638.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    640.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    641.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    643.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    644.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    646.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    647.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    649.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    650.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    652.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    653.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    655.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    656.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    658.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    659.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    661.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    662.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    664.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    665.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    667.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    668.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    670.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    671.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    673.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    674.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    676.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    677.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    679.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    680.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    682.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    683.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    685.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    686.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    688.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    689.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    691.316 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    692.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    694.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    695.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    697.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    698.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    700.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    701.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    703.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    704.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    706.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    707.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    709.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    710.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    712.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    713.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    715.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    716.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    718.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    719.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    721.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    722.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    724.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    725.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    727.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    728.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    730.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    731.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    733.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    734.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    736.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    737.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    739.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    740.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    742.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    743.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    745.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    746.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    748.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    749.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    751.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    752.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    754.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    755.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    757.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    758.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    760.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    761.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    763.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    764.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    766.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    767.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    769.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    770.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    772.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    773.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    775.300 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    776.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    778.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    779.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    781.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    782.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    784.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    785.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    787.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    788.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    790.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    791.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    793.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    794.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    796.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    797.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    799.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    800.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    802.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    803.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    805.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    806.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    808.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    809.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    811.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    812.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    814.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    815.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    817.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    818.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    820.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    821.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    823.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    824.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    826.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    827.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    829.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    830.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    832.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    833.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    835.316 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    836.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    838.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    839.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    841.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    842.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    844.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    845.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    847.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    848.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    850.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    851.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    853.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    854.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    856.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    857.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    859.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    860.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    862.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    863.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    865.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    866.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    868.302 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    869.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    871.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    872.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    874.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    875.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    877.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    878.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    880.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    881.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    883.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    884.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    886.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    887.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    889.319 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    890.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    892.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    893.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    895.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    896.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    898.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    899.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    901.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    902.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    904.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    905.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    907.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    908.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    910.316 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    911.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    913.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    914.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    916.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    917.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    919.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    920.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    922.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    923.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    925.308 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    926.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    928.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    929.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    931.318 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    932.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    934.317 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    935.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    937.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    938.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    940.311 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    941.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    943.318 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    944.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    946.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    947.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    949.313 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    950.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    952.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    953.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    955.318 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    956.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    958.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    959.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    960.329 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    960.329 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    960.329 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    960.329 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    961.309 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    962.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    964.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    965.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    967.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    968.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    970.304 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    971.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    973.306 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    974.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    976.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    977.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    978.326 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    978.326 Warning: Stopping actuator due to timeout: 1 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    978.326 Warning: Stopping actuator due to timeout: 2 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    978.326 Warning: Stopping actuator due to timeout: 3 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    979.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    980.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    982.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    983.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    985.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    986.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    988.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    989.766 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    991.312 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    992.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    994.315 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    995.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    997.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    998.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1000.314 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1001.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1003.307 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1004.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1006.310 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1007.798 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1009.303 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1010.765 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]   1012.305 Warning: "Giving up sending command after max retries: MAV_CMD(310)" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고

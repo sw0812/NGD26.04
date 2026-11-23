@@ -1,0 +1,371 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <plugin name='ros_link_attacher_plugin' filename='libgazebo_ros_link_attacher.so'/>
+    <gravity>0 0 -9.8</gravity>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <shadows>0</shadows>
+      <grid>0</grid>
+      <origin_visual>0</origin_visual>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+    </scene>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>0.599077 11.3628 5.45576 0 0.621928 -1.56988</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <light name='Warehouse_CeilingLight_003' type='point'>
+      <pose>0 0 9 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>80</range>
+        <constant>0.3</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+      <direction>0.1 0.1 -1</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>11127 15000000</sim_time>
+      <real_time>1929 838792065</real_time>
+      <wall_time>1743095612 636528334</wall_time>
+      <iterations>1913604</iterations>
+      <model name='camera1'>
+        <pose>0.5 5 0.05 0 -0 -1.59106</pose>
+        <scale>1 1 1</scale>
+        <link name='camera1link'>
+          <pose>0.5 5 0.05 0 -0 -1.59106</pose>
+          <velocity>0.004953 -0.000132 0.004958 0.002632 0.099046 2e-06</velocity>
+          <acceleration>9.91199 -0.284708 9.91556 2.21542 -0.324373 -3.00494</acceleration>
+          <wrench>0.991199 -0.028471 0.991556 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='camera2'>
+        <pose>-0.5 5 0.05 0 -0 -1.58764</pose>
+        <scale>1 1 1</scale>
+        <link name='camera2link'>
+          <pose>-0.5 5 0.05 0 -0 -1.58764</pose>
+          <velocity>0.004953 -0.000115 0.004958 0.002293 0.099055 2e-06</velocity>
+          <acceleration>9.91291 -0.250596 9.91577 1.53628 -0.342575 -3.00587</acceleration>
+          <wrench>0.991291 -0.02506 0.991577 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='quadrotor'>
+        <pose>-0.063883 -0.329919 0.065589 -1.1e-05 -0.638827 -0.330533</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.166789 -0.294608 0.212072 -1.1e-05 -0.638827 -0.330533</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.191393 -4.11486 3.35949 2.81962 0.004235 -0.54682</acceleration>
+          <wrench>0.251873 -5.41516 4.42108 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='Warehouse_CeilingLight_003'>
+        <pose>0 0 9 0 -0 0</pose>
+      </light>
+    </state>
+    <model name='quadrotor'>
+      <link name='link'>
+        <pose>0 0 0.182466 0 -0 0</pose>
+        <inertial>
+          <mass>1.316</mass>
+          <inertia>
+            <ixx>0.0128</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0128</iyy>
+            <iyz>0</iyz>
+            <izz>0.0218</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://quadrotor/meshes/quadrotor_base.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://quadrotor/meshes/quadrotor_base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.534307 -0.182272 0 0 -0 0</pose>
+    </model>
+    <model name='camera1'>
+      <link name='camera1link'>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000166667</ixx>
+            <iyy>0.000166667</iyy>
+            <izz>0.000166667</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='logical_camera' type='logical_camera'>
+          <logical_camera>
+            <near>0.2</near>
+            <far>2</far>
+            <horizontal_fov>0.9</horizontal_fov>
+            <aspect_ratio>2</aspect_ratio>
+          </logical_camera>
+          <visualize>0</visualize>
+          <always_on>1</always_on>
+          <update_rate>10</update_rate>
+          <topic>camera1</topic>
+        </sensor>
+        <sensor name='camera' type='camera'>
+          <camera name='camera1'>
+            <horizontal_fov>1</horizontal_fov>
+            <image>
+              <width>920</width>
+              <height>720</height>
+            </image>
+            <clip>
+              <near>0.2</near>
+              <far>100</far>
+            </clip>
+            <aspect_ratio>1.5</aspect_ratio>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>1</visualize>
+          <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+            <rosNamespace>camera1</rosNamespace>
+            <cameraName>camera1</cameraName>
+            <eventThreshold>30</eventThreshold>
+            <cameraInfoTopicName>camera1</cameraInfoTopicName>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.461922 5.01653 0 0 -0 0</pose>
+    </model>
+    <model name='camera2'>
+      <link name='camera2link'>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000166667</ixx>
+            <iyy>0.000166667</iyy>
+            <izz>0.000166667</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='logical_camera' type='logical_camera'>
+          <logical_camera>
+            <near>0.2</near>
+            <far>2</far>
+            <horizontal_fov>0.9</horizontal_fov>
+            <aspect_ratio>2</aspect_ratio>
+          </logical_camera>
+          <visualize>0</visualize>
+          <always_on>1</always_on>
+          <update_rate>10</update_rate>
+          <topic>camera1</topic>
+        </sensor>
+        <sensor name='camera' type='camera'>
+          <camera name='camera2'>
+            <horizontal_fov>1</horizontal_fov>
+            <image>
+              <width>920</width>
+              <height>720</height>
+            </image>
+            <clip>
+              <near>0.2</near>
+              <far>100</far>
+            </clip>
+            <aspect_ratio>1.5</aspect_ratio>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>1</visualize>
+          <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+            <rosNamespace>camera2</rosNamespace>
+            <cameraName>camera2</cameraName>
+            <eventThreshold>30</eventThreshold>
+            <cameraInfoTopicName>camera2</cameraInfoTopicName>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.242268 4.82901 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>

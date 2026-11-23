@@ -1,0 +1,26 @@
+# 튜닝 파라미터
+KP_XY = 1.2               # 수평 위치 오차 -> 속도 게인
+MAX_XY_SPEED = 1.2        # m/s, 수평 속도 상한
+MAX_XY_ACCEL = 1.6        # m/s^2, 속도 변화율 제한
+MAX_YAW_RATE = 1.0        # rad/s, 추격(yaw pursuit) 회전 속도 제한
+DESCEND_SPEED = 0.1       # m/s, 하강 속도 (지면 근접 안전 때문에 그대로 유지)
+CENTER_TOLERANCE = 0.15   # m, 이 안에 들어오면 "정렬됨"으로 판단
+LAND_ALTITUDE = 0.48       # m, 이 고도 이하에서 최종 저속 하강 시작
+LAND_FINAL_SPEED = 0.12   # m/s, LAND 상태에서의 하강 속도 (DESCEND_SPEED보다 느리게, 지면 근접 안전용)
+DISARM_ALTITUDE = 0.05    # m, 이 고도 이하로 내려오면 강제 disarm
+LAND_STUCK_TIMEOUT_SEC = 2.0  # 초, 고도 조건은 맞는데 정렬이 안 맞아 착륙을 못 하고
+                               # 있는 상태가 이만큼 지속되면 정렬 무시하고 착륙 강행
+MARKER_LOST_TIMEOUT = 1.0  # 초, 이 시간 넘게 마커 안 보이면 정지/유지
+TIMER_PERIOD = 0.02        # 초, 아래 create_timer 주기와 반드시 일치시킬 것 (50Hz)
+
+MARKER_FILTER_ALPHA = 0.3  # 마커 좌표 EMA 필터 계수 (0~1, 작을수록 더 부드럽지만 반응 느려짐)
+YAW_DEADBAND = 0.08        # m, 이 오차 이내면 bearing 재계산 없이 yaw 유지 (원점 근처 atan2 노이즈 증폭 방지)
+
+# OFFBOARD/ARM 확인 전까지 재시도하는 주기 (너무 자주 보내면 커맨드 버스에 부담)
+MODE_RETRY_PERIOD_SEC = 0.5
+MODE_RETRY_EVERY_N_TICKS = max(1, round(MODE_RETRY_PERIOD_SEC / TIMER_PERIOD))
+
+# 터미널 상태줄 갱신 주기 (너무 빠르면 눈으로 못 읽고 깜빡여서 보임)
+STATUS_REFRESH_HZ = 10
+STATUS_REFRESH_EVERY_N_TICKS = max(1, round((1.0 / TIMER_PERIOD) / STATUS_REFRESH_HZ))
+

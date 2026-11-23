@@ -1,0 +1,38 @@
+"""도착 판정 채점: 미션 로그 [ARRIVE] 순간의 gz 실제 위치 vs 목표 교차점.
+로그의 px4_t는 XRCE timesync로 ROS(유닉스) 시간축이라 ulog(부팅 기준)와 다름 ->
+같은 줄의 ekf=(x,y)를 ulog EKF 궤적에 맞춰 시간 오프셋을 자동 추정.
+사용: .venv-px4/bin/python score_arrivals.py mission.log run.ulg [이름]"""
+import re, sys
+import numpy as np
+from pyulog import ULog
+log, ulg = sys.argv[1], sys.argv[2]
+name = sys.argv[3] if len(sys.argv) > 3 else log
+d = {x.name: x.data for x in ULog(ulg, ["vehicle_local_position_groundtruth", "vehicle_local_position"]).data_list}
+gt, lp = d["vehicle_local_position_groundtruth"], d["vehicle_local_position"]
+tg, tl = gt["timestamp"].astype(np.float64), lp["timestamp"].astype(np.float64)
+rx = re.compile(r"\[ARRIVE\] src=(\w+) cell=\((\d+),(\d+)\) target=\(([\d.]+),([\d.]+)\) px4_t=(\d+) ekf=\(([-\d.]+),([-\d.]+)\)")
+ev = [m.groups() for m in map(rx.search, open(log, encoding="utf-8", errors="ignore")) if m]
+src = [e[0] for e in ev]
+tgt = np.array([[float(e[3]), float(e[4])] for e in ev])
+t = np.array([float(e[5]) for e in ev])
+ekf = np.array([[float(e[6]), float(e[7])] for e in ev])      # world (E, N)
+
+def mis(off):
+    E, N = np.interp(t - off, tl, lp["y"]), np.interp(t - off, tl, lp["x"])
+    return np.mean(np.hypot(E - ekf[:, 0], N - ekf[:, 1]))
+off0 = t[0] - tl[0]
+best = min(np.arange(off0 - 400e6, off0 + 400e6, 0.5e6), key=mis)          # 0.5 s 격자
+best = min(np.arange(best - 1e6, best + 1e6, 0.01e6), key=mis)              # 10 ms 정밀
+print(f"== {name}: 도착 판정 {len(ev)}회 (시간 정렬 잔차 {mis(best)*100:.1f} cm)")
+E, N = np.interp(t - best, tg, gt["y"]), np.interp(t - best, tg, gt["x"])
+err = np.hypot(E - tgt[:, 0], N - tgt[:, 1])
+vE, vN = np.interp(t - best, tg, gt["vy"]), np.interp(t - best, tg, gt["vx"])
+spd = np.hypot(vE, vN)
+along = ((E - tgt[:, 0]) * vE + (N - tgt[:, 1]) * vN) / np.maximum(spd, 1e-3)   # +면 교차점을 지나침
+for s in sorted(set(src)):
+    e = err[np.array(src) == s]
+    print(f"  {s:7s} n={len(e):2d}  실제위치-교차점 평균 {e.mean():.2f} m, 중앙 {np.median(e):.2f}, 최대 {e.max():.2f} | "
+          f"≤0.3m {np.mean(e<=0.3)*100:3.0f}%  ≤0.5m {np.mean(e<=0.5)*100:3.0f}%  >1.0m {np.sum(e>1.0)}회")
+    k = np.array(src) == s
+    print(f"          진행방향 오차(+지나침/-못미침) 평균 {along[k].mean():+.2f} m, 판정 순간 속도 평균 {spd[k].mean():.2f} m/s"
+          f" -> 지연 환산 {np.mean(along[k]/np.maximum(spd[k],0.1)):+.2f} s")

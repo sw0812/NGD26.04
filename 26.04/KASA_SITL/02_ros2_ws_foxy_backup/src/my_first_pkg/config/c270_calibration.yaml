@@ -1,0 +1,21 @@
+image_width: 640
+image_height: 480
+camera_name: c270
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [726.5868618457393, 0.0, 337.04954889478654, 0.0, 726.7732181803808, 235.9760788683822, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.0016922564993142191, 1.2665778200378375, -0.00042597681235353015, 0.00021122564906745055, -4.384900304668493]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [726.5868618457393, 0.0, 337.04954889478654, 0.0, 0.0, 726.7732181803808, 235.9760788683822, 0.0, 0.0, 0.0, 1.0, 0.0]
+# RMS reprojection error: 0.8691 px

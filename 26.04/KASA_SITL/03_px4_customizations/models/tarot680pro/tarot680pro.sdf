@@ -1,0 +1,756 @@
+<!-- TAROT Iron Man 680 Pro Hexacopter (Hexa X) - PX4 SITL / Gazebo Classic
+
+  Cloned from this tree's 6011_gazebo-classic_typhoon_h480 per
+  TAROT680PRO_SITL.md: base_link/rotor physics and rotor placement are
+  680 Pro-specific (doc section 1-2), gimbal/camera/landing-gear removed
+  (doc section 3), sensor/plugin blocks below (imu/mag/baro/gps/mavlink)
+  are typhoon_h480's own blocks unchanged so they stay correct for this
+  PX4 version.
+
+  Rotor index -> angle -> direction (doc section 2, cross-checked against
+  official 6011_gazebo-classic_typhoon_h480 + Tarot ZYX-M manual):
+    idx0 right       90 deg  cw
+    idx1 left       270 deg  ccw
+    idx2 front-left 330 deg  cw
+    idx3 rear-right 150 deg  ccw
+    idx4 front-right 30 deg  ccw
+    idx5 rear-left  210 deg  cw
+-->
+<sdf version='1.5'>
+  <model name='tarot680pro'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name='base_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>2.70</mass>
+        <inertia>
+          <ixx>0.062</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.062</iyy>
+          <iyz>0</iyz>
+          <izz>0.122</izz>
+        </inertia>
+      </inertial>
+
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box><size>0.195 0.195 0.06</size></box>
+        </geometry>
+      </collision>
+      <!-- Real TAROT 680 Pro frame mesh (plates/arms/legs/motor-mounts,
+           converted from the official STEP assembly via FreeCAD, fastener
+           parts and the placeholder propeller sub-part excluded to keep
+           the triangle count sane - 86k tris). Collision stays on the
+           simple box/cylinder/skid shapes below (doc section 3: no STL
+           in collision, it'd be far too slow). -->
+      <visual name='base_link_visual'>
+        <!-- +30deg yaw: the real CAD's arms sit on the 0/60/120.../300deg
+             axes (confirmed against Renderings/top.png - two arms exactly
+             left-right), but our verified rotor/CA geometry uses PX4's
+             hexa-X convention (30/90/150...). Rotating the mesh (visual
+             only, control geometry above is untouched) lines the arms up
+             with the prop positions. Picked +30 arbitrarily since the
+             frame is left/right-symmetric either way; flip the sign if it
+             renders mirrored. -->
+        <pose>0 0 0 0 0 0.5236</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/frame_680pro.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/DarkGrey</name></script></material>
+      </visual>
+
+      <collision name='skid_left'>
+        <pose>0 0.13 -0.18 0 0 0</pose>
+        <geometry><box><size>0.30 0.02 0.02</size></box></geometry>
+      </collision>
+      <collision name='skid_right'>
+        <pose>0 -0.13 -0.18 0 0 0</pose>
+        <geometry><box><size>0.30 0.02 0.02</size></box></geometry>
+      </collision>
+
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+
+    <!-- IMU link/joint - carried over from typhoon_h480 (renamed without the
+         'typhoon_h480/' namespace prefix, since this model has no other
+         same-named sibling to disambiguate from). -->
+    <link name='imu_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='imu_joint' type='revolute'>
+      <child>imu_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- Rotor links: mass/inertia from doc section 1, pose from doc section 2 SDF pose column. -->
+    <link name='rotor_0'>
+      <pose>0 -0.345 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_0_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_0_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Orange</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_0_joint' type='revolute'>
+      <child>rotor_0</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <link name='rotor_1'>
+      <pose>0 0.345 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Black</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_1_joint' type='revolute'>
+      <child>rotor_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <link name='rotor_2'>
+      <pose>0.2988 0.1725 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Orange</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_2_joint' type='revolute'>
+      <child>rotor_2</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <link name='rotor_3'>
+      <pose>-0.2988 -0.1725 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Black</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_3_joint' type='revolute'>
+      <child>rotor_3</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <link name='rotor_4'>
+      <pose>0.2988 -0.1725 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Orange</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_4_joint' type='revolute'>
+      <child>rotor_4</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <link name='rotor_5'>
+      <pose>-0.2988 0.1725 0.06 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.55e-04</iyy><iyz>0</iyz><izz>1.55e-04</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><length>0.005</length><radius>0.165</radius></cylinder></geometry>
+      </collision>
+      <visual name='rotor_5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://tarot680pro/meshes/prop_13x5.stl</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Black</name></script></material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_5_joint' type='revolute'>
+      <child>rotor_5</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e+16</lower><upper>1e+16</upper><effort>10</effort><velocity>-1</velocity></limit>
+        <dynamics><damping>0.005</damping></dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics><ode><implicit_spring_damper>1</implicit_spring_damper></ode></physics>
+    </joint>
+
+    <!-- Generic sensor/vehicle plugins below - inherited unchanged from
+         6011_gazebo-classic_typhoon_h480 of this PX4 tree (doc rationale:
+         these stay correct for this PX4 version regardless of airframe),
+         EXCEPT sonar -> lidar swap below (2026-11-03). -->
+
+    <!-- 2026-11-03: sonar swapped for a downward single-beam lidar
+         (GPS-denied height aiding, EKF2_RNG_CTRL - longer range and lower
+         noise than sonar, which is really only good for the landing
+         flare). Isolated testing found that sonar + lidar coexisting in
+         one model reliably segfaults gzserver ~1-2s after spawn (lidar
+         alone, or sonar alone, are each individually stable for 8+s) -
+         some resource/topic conflict between two ray-type sensors in the
+         same model, not chased further. One rangefinder is enough, so
+         lidar replaces sonar outright rather than running both. -->
+    <include>
+      <uri>model://lidar</uri>
+      <pose>0.08 0 -0.03 0 0 3.141592</pose>
+    </include>
+    <joint name="lidar_joint" type="revolute">
+      <child>lidar::link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><upper>0</upper><lower>0</lower></limit>
+      </axis>
+    </joint>
+
+    <!-- 2026-11-04: GPS-denied arming - PX4 commander hard-blocks arming in
+         EVERY mode (even MANUAL) when there is zero horizontal position
+         aiding at boot (pre_flt_fail_innov_pos_horiz stays failed with no
+         aiding at all; confirmed in PX4 source, estimatorCheck.cpp, this is
+         gated on mode_req_attitude which covers all modes, not overridable
+         via COM_ARM_WO_GPS). ArUco/vision can't help here either since it
+         needs the vehicle airborne to see a marker first - chicken and egg.
+         Optical flow is the one aiding source that's valid from t=0 on the
+         ground (given a textured floor), and is what EKF2_OF_CTRL is built
+         for. Stock px4flow model, same as iris_opt_flow. -->
+    <include>
+      <uri>model://px4flow</uri>
+      <pose>0.05 0 -0.05 0 0 0</pose>
+    </include>
+    <joint name="px4flow_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>px4flow::link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://gps</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <name>gps</name>
+    </include>
+    <joint name='gps_joint' type='fixed'>
+      <child>gps::link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <!-- Added on request (2026-11-02) - the real 680 Pro frame itself has no
+         camera (we removed typhoon_h480's gimbal/camera per doc section 3),
+         but two FIXED (no gimbal) cameras for SITL testing: forward-facing
+         and straight-down. Two independent GStreamer/mavlink_cam streams so
+         QGC can show either one (front=cam_component_id 100/port 5600,
+         matches typhoon's convention so QGC's default video port still
+         works for the front cam; down=101/5601). -->
+    <link name='camera_front_link'>
+      <pose>0.1 0 0.02 0 0 0</pose>
+      <inertial>
+        <mass>0.03</mass>
+        <inertia><ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+                 <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz></inertia>
+      </inertial>
+      <visual name='camera_front_visual'>
+        <geometry><box><size>0.02 0.02 0.02</size></box></geometry>
+        <material><script><name>Gazebo/Black</name></script></material>
+      </visual>
+      <sensor name='camera_front' type='camera'>
+        <pose>0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>2.0</horizontal_fov>
+          <image><format>R8G8B8</format><width>640</width><height>360</height></image>
+          <clip><near>0.05</near><far>15000</far></clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <plugin name='front_cam_gst' filename='libgazebo_gst_camera_plugin.so'>
+          <robotNamespace></robotNamespace>
+          <udpHost>127.0.0.1</udpHost>
+          <udpPort>5600</udpPort>
+        </plugin>
+        <plugin name='front_cam_manager' filename='libgazebo_camera_manager_plugin.so'>
+          <robotNamespace>tarot680pro</robotNamespace>
+          <interval>1</interval>
+          <width>640</width>
+          <height>360</height>
+          <maximum_zoom>1.0</maximum_zoom>
+          <video_uri>udp://127.0.0.1:5600</video_uri>
+          <system_id>1</system_id>
+          <cam_component_id>100</cam_component_id>
+          <mavlink_cam_udp_port>14530</mavlink_cam_udp_port>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='camera_front_joint' type='fixed'>
+      <child>camera_front_link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <link name='camera_down_link'>
+      <!-- 2026-11-03: -0.02 was basically at body center, right in among
+           the rotor arms (z~0) - the downward view was dominated by our
+           own arms instead of the ground. Skids are at z=-0.18, so push
+           the camera below that (-0.25) to clear the whole airframe. -->
+      <pose>0 0 -0.25 0 1.5708 0</pose>
+      <inertial>
+        <mass>0.03</mass>
+        <inertia><ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+                 <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz></inertia>
+      </inertial>
+      <visual name='camera_down_visual'>
+        <geometry><box><size>0.02 0.02 0.02</size></box></geometry>
+        <material><script><name>Gazebo/Black</name></script></material>
+      </visual>
+      <sensor name='camera_down' type='camera'>
+        <pose>0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>2.0</horizontal_fov>
+          <image><format>R8G8B8</format><width>640</width><height>360</height></image>
+          <clip><near>0.05</near><far>15000</far></clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <plugin name='down_cam_gst' filename='libgazebo_gst_camera_plugin.so'>
+          <robotNamespace></robotNamespace>
+          <udpHost>127.0.0.1</udpHost>
+          <udpPort>5602</udpPort>
+        </plugin>
+        <plugin name='down_cam_manager' filename='libgazebo_camera_manager_plugin.so'>
+          <robotNamespace>tarot680pro</robotNamespace>
+          <interval>1</interval>
+          <width>640</width>
+          <height>360</height>
+          <maximum_zoom>1.0</maximum_zoom>
+          <video_uri>udp://127.0.0.1:5602</video_uri>
+          <system_id>1</system_id>
+          <cam_component_id>101</cam_component_id>
+          <mavlink_cam_udp_port>14531</mavlink_cam_udp_port>
+        </plugin>
+        <!-- 2026-11-03: publish straight to ROS2 - usb_cam crashes against
+             the v4l2loopback device (throws 'char const*' right after
+             opening, independent of io_method: tried mmap/userptr/read,
+             all three fail the same way - looks like it assumes V4L2
+             controls (exposure/brightness/...) that a loopback device
+             doesn't implement). This plugin talks to ROS2 directly, no
+             V4L2/loopback/usb_cam in the path at all, and remaps to the
+             exact topics aruco_tracker/the KASA mission node expect. -->
+        <plugin name='down_cam_ros' filename='libgazebo_ros_camera.so'>
+          <ros>
+            <namespace></namespace>
+            <remapping>~/image_raw:=/camera/image_raw</remapping>
+            <remapping>~/camera_info:=/camera/camera_info</remapping>
+          </ros>
+          <camera_name>camera</camera_name>
+          <frame_name>camera_down_link</frame_name>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='camera_down_joint' type='fixed'>
+      <child>camera_down_link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>base_link</linkName>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+    <!-- 6 motor models: motorConstant/maxRotVelocity/momentConstant/timeConstant/
+         drag coefficients from doc section 1 (verified, do not change).
+         turningDirection per-rotor from doc section 2 table. -->
+    <plugin name='rotor_0_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='rotor_1_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='rotor_2_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='rotor_3_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='rotor_4_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='rotor_5_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.02</timeConstantUp>
+      <timeConstantDown>0.04</timeConstantDown>
+      <maxRotVelocity>620</maxRotVelocity>
+      <motorConstant>4.05e-05</motorConstant>
+      <momentConstant>0.018</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>1.0e-04</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+    <plugin name='groundtruth_plugin' filename='libgazebo_groundtruth_plugin.so'>
+      <robotNamespace/>
+    </plugin>
+    <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>100</pubRate>
+      <noiseDensity>0.0004</noiseDensity>
+      <randomWalk>6.4e-06</randomWalk>
+      <biasCorrelationTime>600</biasCorrelationTime>
+      <magTopic>/mag</magTopic>
+    </plugin>
+    <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>50</pubRate>
+      <baroTopic>/baro</baroTopic>
+    </plugin>
+
+    <!-- mavlink_interface: carried over from typhoon_h480, but
+         control_channels trimmed to the 6 rotor channels only (no
+         gimbal/leg channels - this airframe has none), input_scaling set
+         to 620 to match maxRotVelocity above (doc requirement, section 1).
+         zero_position_armed=50 is NOT a verified value - it is carried
+         over proportionally from this script's earlier draft and should
+         be tuned against real idle-throttle behavior if it matters. -->
+    <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
+      <robotNamespace></robotNamespace>
+      <imuSubTopic>/imu</imuSubTopic>
+      <magSubTopic>/mag</magSubTopic>
+      <baroSubTopic>/baro</baroSubTopic>
+      <mavlink_addr>INADDR_ANY</mavlink_addr>
+      <mavlink_tcp_port>4560</mavlink_tcp_port>
+      <mavlink_udp_port>14560</mavlink_udp_port>
+      <serialEnabled>0</serialEnabled>
+      <serialDevice>/dev/ttyACM0</serialDevice>
+      <baudRate>921600</baudRate>
+      <qgc_addr>INADDR_ANY</qgc_addr>
+      <qgc_udp_port>14550</qgc_udp_port>
+      <sdk_addr>INADDR_ANY</sdk_addr>
+      <sdk_udp_port>14540</sdk_udp_port>
+      <hil_mode>0</hil_mode>
+      <hil_state_level>false</hil_state_level>
+      <enable_lockstep>true</enable_lockstep>
+      <use_tcp>true</use_tcp>
+      <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+      <control_channels>
+        <channel name="rotor0">
+          <input_index>0</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name="rotor1">
+          <input_index>1</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name="rotor2">
+          <input_index>2</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name="rotor3">
+          <input_index>3</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name="rotor4">
+          <input_index>4</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+        <channel name="rotor5">
+          <input_index>5</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>620</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>50</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+        </channel>
+      </control_channels>
+    </plugin>
+
+    <static>0</static>
+
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>imu_link</linkName>
+      <imuTopic>/imu</imuTopic>
+    </plugin>
+  </model>
+</sdf>

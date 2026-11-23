@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KASA 미션 제어
+Comment=KASA 시뮬레이션 스택 실행 + 미션 시작/상태 GUI
+Exec=/home/sasllab/ros2_ws/src/my_first_pkg/launch_gui.sh
+Icon=utilities-terminal
+Terminal=false
+Categories=Utility;

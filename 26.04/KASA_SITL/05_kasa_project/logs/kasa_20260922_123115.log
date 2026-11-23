@@ -1,0 +1,3 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-22 12:31:15 ===
+[xrce] [35m[1790047884.390633][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790047884.391321][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4

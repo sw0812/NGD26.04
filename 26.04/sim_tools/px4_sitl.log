@@ -1,0 +1,678 @@
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0
+INFO  [init] found model autostart file as SYS_AUTOSTART=6022
+INFO  [param] selected parameter default file parameters.bson
+INFO  [param] importing from 'parameters.bson'
+INFO  [parameters] BSON document size 639 bytes, decoded 639 bytes (INT32:20, FLOAT:11)
+INFO  [param] selected parameter backup file parameters_backup.bson
+INFO  [dataman] data manager file './dataman' size is 1208528 bytes
+INFO  [init] Gazebo simulator 10.5.0
+INFO  [init] Starting gazebo with world: /home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/worlds/kasa_indoor_search.sdf
+INFO  [init] Starting gz gui
+INFO  [init] Waiting for Gazebo world...
+(2026-11-18 20:21:52.675) [error] [SystemLoader.cc:150] Failed to load system plugin [libGstCameraSystem.so] : Could not find shared library.
+INFO  [init] Gazebo world is ready
+INFO  [init] Gazebo model pose: 0 0 0.95 0 0 0
+INFO  [init] Spawning Gazebo model
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="base_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L80]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="base_link"]/sensor[@name="magnetometer_sensor"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L132]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="base_link"]/sensor[@name="air_pressure_sensor"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L156]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="base_link"]/sensor[@name="navsat_sensor"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L170]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="lidar_sensor_link"]/sensor[@name="lidar"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L460]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="optical_flow"]/link[@name="flow_link"]/sensor[@name="flow_camera"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/optical_flow/model.sdf:L56]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="optical_flow"]/link[@name="flow_link"]/sensor[@name="optical_flow"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/optical_flow/model.sdf:L74]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="camera_front_link"]/sensor[@name="camera_front"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L500]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="tarot680pro"]/link[@name="camera_down_link"]/sensor[@name="camera_down"]/gz_frame_id:/home/saslab/바탕화면/KASA_SITL/PX4-Autopilot/Tools/simulation/gz/models/tarot680pro/model.sdf:L538]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+libEGL warning: pci id for fd 65: 10de:2d18, driver (null)
+
+pci id for fd 66: 10de:2d18, driver (null)
+pci id for fd 67: 10de:2d18, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 65: 10de:2d18, driver (null)
+
+pci id for fd 66: 10de:2d18, driver (null)
+pci id for fd 67: 10de:2d18, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 65: 10de:2d18, driver (null)
+
+INFO  [lockstep_scheduler] setting initial absolute time to 3312000 us
+INFO  [gz_bridge] world: kasa_indoor_search, model: tarot680pro_0
+INFO  [init] Setting camera to follow tarot680pro_0
+INFO  [init] Camera follow offset set to -2.0, -2.0, 2.0
+INFO  [commander] LED: open /dev/led0 failed (22)
+WARN  [health_and_arming_checks] Preflight Fail: system power unavailable
+INFO  [vision_target_estimator] VTE for static target init
+INFO  [tone_alarm] home set
+INFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888
+INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550
+INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030
+INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280
+INFO  [logger] logger started (mode=all)
+INFO  [logger] Max log file size: 1024 MiB
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2026-11-18/11_21_58.ulg	
+INFO  [logger] Opened full log file: ./log/2026-11-18/11_21_58.ulg
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [px4] Startup script returned successfully
+INFO  [commander] [32mReady for takeoff![0m
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+INFO  [uxrce_dds_client] synchronized with time offset 1795000914155261us
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/register_ext_component_reply_v1 data writer, topic id: 220
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/arming_check_request_v1 data writer, topic id: 16
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/setpoint_config_reply data writer, topic id: 259
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/mode_completed data writer, topic id: 167
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/battery_status_v1 data writer, topic id: 20
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/collision_constraints data writer, topic id: 27
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/estimator_status_flags data writer, topic id: 90
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/failsafe_flags data writer, topic id: 96
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/manual_control_setpoint data writer, topic id: 158
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/message_format_response data writer, topic id: 164
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/position_setpoint_triplet data writer, topic id: 203
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/sensor_combined data writer, topic id: 240
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/timesync_status data writer, topic id: 268
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/transponder_report data writer, topic id: 271
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_land_detected data writer, topic id: 295
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_attitude data writer, topic id: 282
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_control_mode data writer, topic id: 289
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_command_ack_v1 data writer, topic id: 286
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_global_position data writer, topic id: 290
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_gps_position data writer, topic id: 292
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_local_position_v1 data writer, topic id: 296
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_odometry data writer, topic id: 301
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vehicle_status_v4 data writer, topic id: 306
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/airspeed_validated_v1 data writer, topic id: 13
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vtol_vehicle_status data writer, topic id: 325
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/home_position_v1 data writer, topic id: 137
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/wind data writer, topic id: 328
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/gimbal_device_attitude_status data writer, topic id: 119
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/config_overrides_confirm_v1 data writer, topic id: 29
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/vtx data writer, topic id: 326
+INFO  [uxrce_dds_client] successfully created rt/fmu/out/input_rc data writer, topic id: 139
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+INFO  [commander] Armed by external command	
+INFO  [tone_alarm] arming warning
+INFO  [commander] Takeoff detected	
+INFO  [commander] Disarmed by external command	
+INFO  [tone_alarm] notify neutral
+INFO  [logger] closed logfile, bytes written: 28699353
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 20
+Number of good matches: 2, desired: 18
+Number of good matches: 2, desired: 6
+Number of good matches: 3, desired: 13
+Number of good matches: 1, desired: 15
+Number of good matches: 1, desired: 14
+Number of good matches: 6, desired: 16
+Number of good matches: 3, desired: 12
+Number of good matches: 5, desired: 12
+Number of good matches: 6, desired: 14
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 15
+Number of good matches: 5, desired: 12
+Number of good matches: 6, desired: 15
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 2, desired: 17
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 14
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 8
+Number of good matches: 2, desired: 11
+Number of good matches: 1, desired: 11
+Number of good matches: 1, desired: 12
+Number of good matches: 2, desired: 15
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 14
+Number of good matches: 2, desired: 15
+Number of good matches: 1, desired: 15
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 15
+Number of good matches: 1, desired: 14
+Number of good matches: 2, desired: 13
+Number of good matches: 1, desired: 8
+Number of good matches: 1, desired: 15
+Number of good matches: 1, desired: 15
+Number of good matches: 2, desired: 14
+Number of good matches: 3, desired: 8
+Number of good matches: 2, desired: 14
+Number of good matches: 1, desired: 17
+Number of good matches: 1, desired: 17
+Number of good matches: 1, desired: 20
+Number of good matches: 1, desired: 17
+Number of good matches: 1, desired: 17
+Number of good matches: 1, desired: 20
+Number of good matches: 2, desired: 4
+Number of good matches: 2, desired: 7
+Number of good matches: 3, desired: 6
+Number of good matches: 5, desired: 6
+Number of good matches: 2, desired: 7
+Number of good matches: 1, desired: 5
+Number of good matches: 2, desired: 3
+Number of good matches: 2, desired: 3
+Number of good matches: 2, desired: 7
+Number of good matches: 3, desired: 6
+Number of good matches: 3, desired: 9
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good match
+PX4 Exiting...
+es: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Number of good matches: 1, desired: 16
+Exiting NOW.
+XIO:  fatal IO error 0 (Success) on X server ":0"
+      after 23 requests (23 known processed) with 1 events remaining.

@@ -1,0 +1,30 @@
+/**:
+    ros__parameters:
+      video_device: "/dev/video0"
+      framerate: 30.0
+      io_method: "mmap"
+      frame_id: "c270_camera"
+      # mjpeg2rgb는 이 보드(Jetson) ffmpeg swscale에서 "No accelerated
+      # colorspace conversion" 이후 char* 예외로 즉시 죽음(usb_cam 0.6.0
+      # 알려진 문제) — C270이 YUYV도 640x480@30 지원해서(v4l2-ctl 확인) 이걸로 우회.
+      pixel_format: "yuyv"
+      image_width: 640
+      image_height: 480
+      camera_name: "c270"
+      # 2026-08-27 자체 캘리브레이션 완료 (13x8/17mm 체커보드, 18샘플,
+      # RMS 재투영오차 0.87px). 실측 HFOV=47.5°/VFOV=36.5° — 시뮬레이션
+      # 가정치(86°)와 크게 다름, search_phase_node.py 게이팅 상수 재검토 필요.
+      # my_first_pkg에 COLCON_IGNORE가 있어서 package:// URL이 해석 안 됨
+      # (ros2 pkg prefix my_first_pkg -> "Package not found") — 절대경로로 대체.
+      camera_info_url: "file:///home/sasllab/ros2_ws/src/my_first_pkg/config/c270_calibration.yaml"
+      brightness: -1
+      contrast: -1
+      saturation: -1
+      sharpness: -1
+      gain: -1
+      auto_white_balance: true
+      white_balance: 4000
+      autoexposure: true
+      exposure: 100
+      autofocus: false
+      focus: -1

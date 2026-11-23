@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="camera2">
+    <link name="camera2link">
+      <gravity>true</gravity>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000166667</ixx>
+          <iyy>0.000166667</iyy>
+          <izz>0.000166667</izz>
+        </inertia>
+      </inertial>
+
+         <!-- 충돌체: 단순 박스 -->
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- 시각적 요소: 단순 박스 -->
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <!-- 논리 카메라 센서 -->
+      <sensor name="logical_camera" type="logical_camera">
+        <logical_camera>
+          <near>0.2</near>
+          <far>2.0</far>
+          <horizontal_fov>0.9</horizontal_fov>
+          <aspect_ratio>2.0</aspect_ratio>
+        </logical_camera>
+        <visualize>false</visualize>
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <!-- 토픽 이름을 camera1으로 변경 -->
+        <topic>camera1</topic>
+      </sensor>
+
+      <!-- 카메라 센서 -->
+      <sensor name="camera" type="camera">
+        <camera name="camera2">
+          <horizontal_fov>1</horizontal_fov>
+          <aspect_ratio>1.5</aspect_ratio>
+          <image>
+            <width>920</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.2</near>
+            <far>100.0</far>
+          </clip>
+        </camera>
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <rosNamespace>camera2</rosNamespace>
+          <cameraName>camera2</cameraName>
+          <eventThreshold>30</eventThreshold>
+          <cameraInfoTopicName>camera2</cameraInfoTopicName>
+        </plugin>
+      </sensor>
+      
+    </link>
+  </model>
+</sdf>

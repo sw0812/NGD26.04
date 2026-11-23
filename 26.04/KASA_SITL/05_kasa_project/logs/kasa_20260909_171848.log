@@ -1,0 +1,8 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-09 17:18:48 ===
+[xrce] [35m[1788941931.689196][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1788941931.689608][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[reboot] Pixhawk 재부팅 명령 전송됨
+[xrce] [프로세스 종료됨]
+[xrce] [35m[1788942058.165014][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1788942058.165536][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[reboot] Pixhawk 재부팅 명령 전송됨

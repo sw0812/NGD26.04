@@ -1,0 +1,51 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-11-03 12:16:57 ===
+[xrce] [35m[1793675818.389423][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1793675818.389931][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[camera] [INFO] [1793675822.797975697] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675822.798686397] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675822.806263134] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675822.807449042] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675822.808587174] [usb_cam]: Starting 'default_cam' (/dev/video0) at 640x360 via mmap (yuyv2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'std::invalid_argument'
+[camera]   what():  Device is not a video capture device
+[camera] [프로세스 종료됨]
+[camera] [INFO] [1793675827.375027219] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675827.375696062] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675827.386258286] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675827.387218462] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675827.392120495] [usb_cam]: Starting 'default_cam' (/dev/video0) at 640x360 via mmap (yuyv2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'std::invalid_argument'
+[camera]   what():  Device is not a video capture device
+[camera] [프로세스 종료됨]
+[camera] [INFO] [1793675830.668008768] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675830.668545129] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675830.674908049] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675830.676124997] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675830.677222263] [usb_cam]: Starting 'default_cam' (/dev/video0) at 640x360 via mmap (yuyv2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'std::invalid_argument'
+[camera]   what():  Device is not a video capture device
+[camera] [프로세스 종료됨]
+[camera] [INFO] [1793675876.905280026] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675876.905806913] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675876.914619834] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675876.915740010] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675876.915913484] [usb_cam]: Starting 'default_cam' (/dev/video0) at 640x360 via mmap (yuyv2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'char const*'
+[camera] [프로세스 종료됨]
+[camera] [INFO] [1793675947.928660366] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675947.929421123] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675947.939555654] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675947.941446058] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675947.943303020] [usb_cam]: Starting 'default_cam' (/dev/video0) at 640x360 via mmap (yuyv2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'char const*'
+[camera] [프로세스 종료됨]

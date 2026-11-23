@@ -1,0 +1,25 @@
+착륙 제어 조건
+
+ArUco marker SEARCH
+      ↓
+max speed 0.5로 램프업 램프다운(가속도제한)
+       ↓
+카메라 상대좌표 획득
+      ↓
+월드 좌표 변환
+      ↓
+목표 위치 생성
+      ↓
+PX4 Position Controller
+      ↓
+30cm 이하 + 중앙 정렬 완료
+      ↓
+LAND
+      ↓
+마커 유실?
+      ↓
+무시
+      ↓
+착륙 
+
+

@@ -1,0 +1,144 @@
+note: 버티포트(출발점) 중심 = (0,0,0). 규정 '출발점 기준' 과 일치.
+units: meters
+frame: ENU (x=East, y=North, z=Up) — Gazebo world 기준
+texture_scale_px_per_m: 200.0
+origin_at_vertiport: true
+drone_spawn:
+  x: 0.0
+  y: 0.0
+  z: 0.75
+  note: 버티포트 상판(0.7m) 위. PX4 EKF local origin 이 여기가 됨.
+mission_area:
+  w: 24.0
+  h: 15.0
+  center:
+  - 14.0
+  - 9.5
+  x_range:
+  - 2.0
+  - 26.0
+  y_range:
+  - 2.0
+  - 17.0
+safe_area:
+  w: 32.0
+  h: 23.0
+  center:
+  - 14.0
+  - 9.5
+  x_range:
+  - -2.0
+  - 30.0
+  y_range:
+  - -2.0
+  - 21.0
+margin_mission_to_safe_m: 4.0
+grid:
+  spacing: 3.0
+  line_width: 0.1
+  n_cols: 8
+  n_rows: 5
+all_grid_intersections_28:
+- x: 5.0
+  y: 5.0
+- x: 5.0
+  y: 8.0
+- x: 5.0
+  y: 11.0
+- x: 5.0
+  y: 14.0
+- x: 8.0
+  y: 5.0
+- x: 8.0
+  y: 8.0
+- x: 8.0
+  y: 11.0
+- x: 8.0
+  y: 14.0
+- x: 11.0
+  y: 5.0
+- x: 11.0
+  y: 8.0
+- x: 11.0
+  y: 11.0
+- x: 11.0
+  y: 14.0
+- x: 14.0
+  y: 5.0
+- x: 14.0
+  y: 8.0
+- x: 14.0
+  y: 11.0
+- x: 14.0
+  y: 14.0
+- x: 17.0
+  y: 5.0
+- x: 17.0
+  y: 8.0
+- x: 17.0
+  y: 11.0
+- x: 17.0
+  y: 14.0
+- x: 20.0
+  y: 5.0
+- x: 20.0
+  y: 8.0
+- x: 20.0
+  y: 11.0
+- x: 20.0
+  y: 14.0
+- x: 23.0
+  y: 5.0
+- x: 23.0
+  y: 8.0
+- x: 23.0
+  y: 11.0
+- x: 23.0
+  y: 14.0
+scored_waypoints_aruco:
+- id: 1
+  x: 8.0
+  y: 5.0
+  z: 0.0
+  marker_size_m: 0.5
+  dictionary: DICT_5X5_50
+- id: 2
+  x: 11.0
+  y: 14.0
+  z: 0.0
+  marker_size_m: 0.5
+  dictionary: DICT_5X5_50
+- id: 3
+  x: 17.0
+  y: 8.0
+  z: 0.0
+  marker_size_m: 0.5
+  dictionary: DICT_5X5_50
+- id: 4
+  x: 23.0
+  y: 14.0
+  z: 0.0
+  marker_size_m: 0.5
+  dictionary: DICT_5X5_50
+optimal_search_order:
+- 1
+- 2
+- 3
+- 4
+rescue_return_order:
+- 4
+- 3
+- 2
+- 1
+vertiport:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  diameter_m: 3.0
+  height_m: 0.7
+  aircraft_safe_zone_diameter_m: 2.0
+  center_marker_size_m: 0.5
+  center_marker_id: 0
+  dictionary: DICT_5X5_50
+  marker_top_z_m: 0.7
+  pad_texture_extent_m: 3.2

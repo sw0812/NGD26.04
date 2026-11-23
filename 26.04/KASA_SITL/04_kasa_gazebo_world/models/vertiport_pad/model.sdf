@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="vertiport_pad">
+    <static>true</static>
+    <link name="pad">
+      <pose>0 0 0.35 0 0 0</pose>
+      <collision name="pad_collision">
+        <geometry>
+          <cylinder>
+            <radius>1.5</radius>
+            <length>0.7</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="pad_visual">
+        <geometry>
+          <cylinder>
+            <radius>1.5</radius>
+            <length>0.7</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://vertiport_pad/materials/scripts</uri>
+            <uri>model://vertiport_pad/materials/textures</uri>
+            <name>Kasa/VertiportPad</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- 상판 표식: 외곽링(지름3m) + 안전구역링(지름2m) + V픽토그램 + 중앙 ArUco(ID0, 0.5x0.5m)
+         텍스처가 덮는 범위 3.2x3.2m (외곽 원 3m + 선 굵기 여백). 축척 200 px/m 로 바닥 텍스처와 동일. -->
+    <link name="marker">
+      <pose>0 0 0.701 0 0 0</pose>
+      <visual name="marker_visual">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.2 3.2</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://vertiport_pad/materials/scripts</uri>
+            <uri>model://vertiport_pad/materials/textures</uri>
+            <name>Kasa/VertiportMarker</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="marker_fixed" type="fixed">
+      <parent>pad</parent>
+      <child>marker</child>
+    </joint>
+  </model>
+</sdf>

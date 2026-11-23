@@ -1,0 +1,164 @@
+#!/bin/sh
+#
+# @name TAROT Iron Man 680 Pro Hexacopter (SITL)
+#
+# @type Hexarotor x
+# @class Copter
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+param set-default MAV_TYPE 13
+
+# Hexarotor X, arm radius 0.345 m, body frame FRD (x fwd, y right).
+# Index order follows PX4's own hexa X convention (verified against the
+# official 6011_gazebo-classic_typhoon_h480 airframe).
+#
+# 2026-11-02: KM signs below are FLIPPED from the doc's stated convention
+# (doc said ccw<->KM+0.05, cw<->KM-0.05). With the doc's original signs the
+# vehicle spun continuously at a constant ~374deg/s in one direction the
+# instant it lifted off (classic uncancelled-yaw-torque symptom) - the SDF
+# turningDirection per rotor was independently verified correct against
+# the rotor placement angles, so the bug was specifically in which KM sign
+# the allocator expects for a given spin direction. Flipping every KM sign
+# (not the SDF turningDirection, not the rotor placement) took it from a
+# constant uncontrolled spin to actively damping toward a heading within
+# ~10s. If you ever regenerate this file from the doc, flip these signs
+# again.
+param set-default CA_AIRFRAME 0
+param set-default CA_ROTOR_COUNT 6
+
+param set-default CA_ROTOR0_PX   0.0
+param set-default CA_ROTOR0_PY   0.345
+param set-default CA_ROTOR0_KM   0.05
+
+param set-default CA_ROTOR1_PX   0.0
+param set-default CA_ROTOR1_PY  -0.345
+param set-default CA_ROTOR1_KM  -0.05
+
+param set-default CA_ROTOR2_PX   0.2988
+param set-default CA_ROTOR2_PY  -0.1725
+param set-default CA_ROTOR2_KM   0.05
+
+param set-default CA_ROTOR3_PX  -0.2988
+param set-default CA_ROTOR3_PY   0.1725
+param set-default CA_ROTOR3_KM  -0.05
+
+param set-default CA_ROTOR4_PX   0.2988
+param set-default CA_ROTOR4_PY   0.1725
+param set-default CA_ROTOR4_KM  -0.05
+
+param set-default CA_ROTOR5_PX  -0.2988
+param set-default CA_ROTOR5_PY  -0.1725
+param set-default CA_ROTOR5_KM   0.05
+
+# Gazebo Classic drives motors through the mavlink_interface plugin, so
+# outputs use PWM_MAIN_FUNC — NOT SIM_GZ_EC_*, which is the gz-sim bridge.
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+param set-default PWM_MAIN_FUNC5 105
+param set-default PWM_MAIN_FUNC6 106
+
+# AUW 2.8 kg vs 6 x 1.58 kg max thrust -> T/W 3.4
+param set-default MPC_THR_HOVER 0.54
+
+# Starting gains for a 2.8 kg / 695 mm hexa. Tuning target, not verified.
+# 2026-11-02: 0.11 was underdamped in live SITL testing - hover oscillated
+# at ~1.6Hz, +-9..25deg roll/pitch, and got WORSE when lowered further
+# (ruled out "P too high" per the usual high-freq-vibration playbook).
+# Raising to 0.18 fixed it: steady hover at +-0.5..1deg over 15s. Lowering
+# MC_ROLL_P/MC_PITCH_P (the outer loop) instead was also tried and also
+# made it worse, so the outer loop is not the culprit here.
+param set-default MC_ROLLRATE_P  0.18
+param set-default MC_ROLLRATE_I  0.22
+param set-default MC_ROLLRATE_D  0.004
+param set-default MC_PITCHRATE_P 0.18
+param set-default MC_PITCHRATE_I 0.22
+param set-default MC_PITCHRATE_D 0.004
+# 2026-11-02: after the CA_ROTOR_KM sign fix above, yaw stopped spinning
+# outright but still had a residual +-40deg/s wobble at 0.18 - same
+# underdamped pattern as roll/pitch, fixed the same way (more P, not
+# less). 0.6 took it down to +-2deg/s while holding roll/pitch steady.
+param set-default MC_YAWRATE_P   0.6
+param set-default MC_YAWRATE_I   0.10
+
+param set-default MC_ROLL_P      6.0
+param set-default MC_PITCH_P     6.0
+param set-default MC_YAW_P       2.6
+
+# Camera platform limits, not a racer.
+param set-default MPC_XY_VEL_MAX 8.0
+param set-default MPC_Z_VEL_MAX_UP 3.0
+param set-default MPC_Z_VEL_MAX_DN 1.5
+param set-default MPC_TILTMAX_AIR 35.0
+param set-default MPC_LAND_SPEED 0.7
+
+# 2026-11-02: QGC manual flight test felt like it overshot on stop and
+# corrected back - velocity loop was underdamped (default 0.2). Raised to
+# 0.35, confirmed feels right in QGC.
+param set-default MPC_XY_VEL_D_ACC 0.35
+
+# 2026-11-03/04: tried EKF2_RNG_CTRL=1 (for the downward lidar) and
+# EKF2_GPS_CTRL=7 / EKF2_EV_CTRL=11 (GPS+vision blend, matching the real
+# hardware's mav.parm) here. Even on a fully clean boot with these set
+# from the start (no live param_set at all), GLOBAL_POSITION_INT never
+# showed up and HOME_POSITION never got set, which blocks arming
+# (XY_POS_CTRL stays unhealthy) regardless of GPS/EV/RNG being
+# individually toggled on or off - narrowed it that far but not further.
+# Reverted all three to isolate whether it's one of these specifically or
+# something else (plain stock config flew fine for hours earlier today).
+# 2026-11-04: isolated with a stock-empty.world A/B test - this GPS_GLITCH
+# latch is specific to the KASA indoor world, NOT this airframe/model (stock
+# world: flags healthy, pos_horiz_abs/rel both true, no glitch, every time).
+# Separately confirmed in PX4 source (estimatorCheck.cpp): with ZERO position
+# aiding at boot, pre_flt_fail_innov_pos_horiz blocks arming in every single
+# mode (even MANUAL), not just GPS-dependent ones, and COM_ARM_WO_GPS doesn't
+# cover this check. ArUco vision can't bootstrap this either since it needs
+# the vehicle airborne to see a marker first. Optical flow (px4flow model,
+# added above the GPS include in the .sdf) is valid from t=0 on the ground,
+# so EKF2_OF_CTRL is the actual supported path to arm with GPS off.
+param set-default EKF2_OF_CTRL 1
+param set-default EKF2_RNG_CTRL 2
+# 2026-11-04: chased true zero-aiding GPS-less arm (EKF2_GPS_CTRL=0) all the
+# way into EKF2's C++ source and hit a genuine architectural wall, not a
+# param tuning issue:
+#   - optical_flow_control.cpp: flow fusion can only START if
+#     isHeightAboveGroundEstimateValid() is already true.
+#   - that resolves to isTerrainEstimateValid() || (EKF2_HGT_REF==RANGE).
+#   - range_height_control.cpp: do_range_aid/do_conditional_range_aid (which
+#     is what sets rng_hgt true) themselves require
+#     (flags.rng_terrain || flags.rng_hgt) to ALREADY be true as a
+#     precondition - i.e. rng_hgt needs rng_hgt (or rng_terrain) to already
+#     be running to start running.
+#   - terrain_control.cpp's own initTerrain() bootstrap explicitly skips
+#     itself whenever _height_sensor_ref == RANGE.
+# Every path to a from-a-standstill, zero-other-aiding start is gated behind
+# itself already being started. Confirmed empirically too: OPTICAL_FLOW_RAD
+# and DISTANCE_SENSOR data both flowed into PX4 correctly the whole time
+# (verified via mavlink) but of_active/rng_active never left 0 in
+# estimator_fusion_control, no matter which combination of EKF2_OF_CTRL/
+# EKF2_RNG_CTRL/EKF2_HGT_REF was tried, fresh-booted each time. This would
+# need an EKF2 code change (not a param), out of scope here.
+# Staying on the real-hardware pattern instead (same one referenced in the
+# user's own earlier research): GPS bootstraps the initial position/arm
+# (confirmed zero EKF2_GPS_CTRL glitch in the stock empty.world - the glitch
+# seen earlier was specific to the KASA indoor world, see history above),
+# optical flow + rangefinder ride along and take over once airborne.
+# 2026-11-04: tried falling back to GPS+OF+RNG+EV blending (EKF2_GPS_CTRL=7)
+# here after pure GPS-off hit the circularity wall above - confirmed it DOES
+# let POSCTL arm and stay armed (5s sustained, stock empty.world, flags
+# healthy). But the user's actual instruction was "GPS 없이 arm 되도록" (make
+# it arm WITHOUT GPS) - substituting GPS blending instead of reporting back
+# that pure no-GPS doesn't work and asking first was wrong, so reverted back
+# to GPS off per that instruction, even though that means it currently
+# can't arm (see the circularity findings above - unresolved).
+param set-default EKF2_GPS_CTRL 0
+param set-default COM_ARM_WO_GPS 1
+# Also found while testing the blend above, still true either way: arm
+# attempts with no continuous MANUAL_CONTROL mavlink stream get rejected
+# with "manual_control_signal_lost" regardless of estimator health. And
+# COM_RC_IN_MODE=0 (default, RC-only) won't accept a script/mavlink-driven
+# stick source at all - would need =1 for that, NOT changed here since it
+# may conflict with the physical Radiomaster joystick's own input path.

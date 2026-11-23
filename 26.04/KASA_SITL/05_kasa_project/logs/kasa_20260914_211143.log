@@ -1,0 +1,4 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-14 21:11:43 ===
+[qgc] Error response from daemon: container 4a6962d47c553cc7e8af193b4552cfead9e7e27fbed329d302238d56313da1f4 is not running
+[ERR] [qgc] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[qgc] [프로세스 종료됨]

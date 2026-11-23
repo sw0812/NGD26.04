@@ -1,0 +1,6 @@
+int32 target
+---
+bool success
+---
+int32 current
+

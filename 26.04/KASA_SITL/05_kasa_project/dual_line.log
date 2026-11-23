@@ -1,0 +1,48 @@
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 40프레임 중 일치 25% (양쪽 검출된 프레임 평균 각도차 58.4deg, n=5)
+[STATS] 56프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 49프레임 중 일치 6% (양쪽 검출된 프레임 평균 각도차 6.9deg, n=3)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=146.3deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 46프레임 중 일치 24% (양쪽 검출된 프레임 평균 각도차 80.1deg, n=21)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=124.4deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 75.6deg, n=19)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 55프레임 중 일치 56% (양쪽 검출된 프레임 평균 각도차 12.2deg, n=40)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=81.8deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 47프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 60.2deg, n=45)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 74.1deg, n=46)
+[STATS] 46프레임 중 일치 22% (양쪽 검출된 프레임 평균 각도차 28.3deg, n=37)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 49프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 35.0deg, n=29)
+[STATS] 46프레임 중 일치 24% (양쪽 검출된 프레임 평균 각도차 26.2deg, n=13)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=69.2deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 49프레임 중 일치 2% (양쪽 검출된 프레임 평균 각도차 95.6deg, n=5)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 50프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 49프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=62.6deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 46프레임 중 일치 2% (양쪽 검출된 프레임 평균 각도차 53.2deg, n=21)
+[STATS] 45프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 24.9deg, n=1)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 56.9deg, n=24)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 49프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 48프레임 중 일치 40% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 48프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=43.0deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 51프레임 중 일치 10% (양쪽 검출된 프레임 평균 각도차 24.0deg, n=11)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 49프레임 중 일치 29% (양쪽 검출된 프레임 평균 각도차 8.1deg, n=14)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 45프레임 중 일치 20% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 48프레임 중 일치 67% (양쪽 검출된 프레임 평균 각도차 63.9deg, n=5)
+[STATS] 48프레임 중 일치 100% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[STATS] 47프레임 중 일치 85% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 46프레임 중 일치 0% (양쪽 검출된 프레임 평균 각도차 nandeg, n=0)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (angle-diff=60.6deg) - MAIN 값은 계속 신뢰하되 점검 필요
+[STATS] 49프레임 중 일치 2% (양쪽 검출된 프레임 평균 각도차 51.0deg, n=8)
+[WARN] MAIN/SERVE 불일치 10프레임 연속 (found-mismatch) - MAIN 값은 계속 신뢰하되 점검 필요

@@ -1,0 +1,1 @@
+./Tools/simulation/gazebo-classic/sitl_run.sh $(pwd)/build/px4_sitl_default/bin/px4 none iris_lidar none $(pwd) $(pwd)/build/px4_sitl_default

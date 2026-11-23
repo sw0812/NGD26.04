@@ -1,0 +1,23 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-11-03 12:14:58 ===
+[xrce] [35m[1793675699.012974][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1793675699.013635][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[camera] [INFO] [1793675702.889140137] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675702.889580255] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675702.901943390] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675702.907711162] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675702.908008873] [usb_cam]: Starting 'default_cam' (/dev/video0) at 1280x720 via mmap (mjpeg2rgb) at 30 FPS
+[camera] [swscaler @ 0xaaaafe7b8390] No accelerated colorspace conversion found from yuv422p to rgb24.
+[camera] terminate called after throwing an instance of 'char*'
+[camera] [프로세스 종료됨]
+[camera] [INFO] [1793675707.076399662] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1793675707.076872548] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675707.083913578] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1793675707.085654587] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1793675707.086477921] [usb_cam]: Starting 'default_cam' (/dev/video0) at 1280x720 via mmap (mjpeg2rgb) at 30 FPS
+[camera] [swscaler @ 0xaaab0c5e9ab0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[camera] terminate called after throwing an instance of 'char*'
+[camera] [프로세스 종료됨]

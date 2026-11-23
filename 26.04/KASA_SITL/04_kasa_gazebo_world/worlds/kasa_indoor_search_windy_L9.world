@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- 수동 관리 파일 (자동생성 아님) — kasa_indoor_search.world에 PX4 SITL
+     바람 플러그인(libgazebo_wind_plugin.so)만 추가한 버전. 베이스 월드가
+     scripts/generate_field.py로 재생성될 때마다 이 파일도 같이 손으로
+     맞춰줘야 함(격자/마커 배치가 바뀌면). -->
+<sdf version="1.6">
+  <world name="kasa_indoor_search_windy">
+
+    <!-- model://sun include 대신 직접 정의 (온라인 모델 DB 조회로 인한 hang 방지) -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- 실내(공장) 임무 컨셉 - 낮은 조도 -->
+    <scene>
+      <ambient>0.35 0.35 0.38 1</ambient>
+      <background>0.1 0.1 0.12 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+
+    <!-- ===================================================================
+         좌표계: 버티포트(출발점) 중심 = (0,0,0). 규정 '출발점 기준' 과 일치.
+         드론 스폰 위치 : (0.0, 0.0, 0.75)  <- 버티포트 상판 위
+         Mission area   : x [2.0 .. 26.0]  y [2.0 .. 17.0]
+         경로점(ArUco)   : ID1(8.0, 5.0), ID2(11.0, 14.0), ID3(17.0, 8.0), ID4(23.0, 14.0)
+         =================================================================== -->
+
+    <!-- 바닥면: safe area 32x23m + mission area 24x15m + 3m 격자 + 경로점 ArUco 4개 -->
+    <include>
+      <uri>model://kasa_ground_field</uri>
+      <pose>14.0 9.5 0 0 0 0</pose>
+    </include>
+
+    <!-- 버티포트: 지름 3m, 높이 0.7m, 상판에 V픽토그램 + 중앙 ArUco(ID0) -->
+    <include>
+      <uri>model://vertiport_pad</uri>
+      <pose>0.0 0.0 0 0 0 0</pose>
+    </include>
+
+    <!-- 바람 스트레스 테스트용. 값 조정은 이 블록만 건드리면 됨 (Gazebo는
+         월드 로드 시점에만 값을 읽어서, 실행 중 세기 조절은 안 되고 재실행
+         해야 반영됨). windVelocityMean/Max를 0으로 낮추면 사실상 무풍. -->
+    <plugin name="wind_plugin" filename="libgazebo_wind_plugin.so">
+      <frameId>base_link</frameId>
+      <robotNamespace/>
+      <windVelocityMean>9.0</windVelocityMean>
+      <windVelocityMax>18.0</windVelocityMax>
+      <windVelocityVariance>2.0</windVelocityVariance>
+      <windDirectionMean>1 0.3 0</windDirectionMean>
+      <windDirectionVariance>0.5</windDirectionVariance>
+      <windGustStart>5</windGustStart>
+      <windGustDuration>3</windGustDuration>
+      <windGustVelocityMean>15.0</windGustVelocityMean>
+      <windGustVelocityMax>27.0</windGustVelocityMax>
+      <windGustVelocityVariance>3.0</windGustVelocityVariance>
+      <windGustDirectionMean>0 1 0</windGustDirectionMean>
+      <windGustDirectionVariance>0.5</windGustDirectionVariance>
+      <windPubTopic>world_wind</windPubTopic>
+    </plugin>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>12.0 -14.5 20 0 0.72 1.5708</pose>
+      </camera>
+    </gui>
+
+  </world>
+</sdf>

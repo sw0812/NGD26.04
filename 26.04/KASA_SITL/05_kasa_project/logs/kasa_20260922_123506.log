@@ -1,0 +1,264 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-22 12:35:06 ===
+[xrce] [35m[1790048113.964116][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790048113.964482][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[xrce] [35m[1790048446.505996][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790048446.506459][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[xrce] [35m[1790048461.757433][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790048461.757892][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[xrce] [35m[1790048467.404644][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790048467.404986][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[camera] [INFO] [1790049565.662709145] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1790049565.662921151] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[aruco] [INFO] [1790049565.668682322] [aruco_tracker]: Configuring
+[aruco] [INFO] [1790049565.668909784] [aruco_tracker]: Camera Base Topic: camera/image_raw
+[aruco] [INFO] [1790049565.668944665] [aruco_tracker]: Assume images are rectified: NO
+[aruco] [INFO] [1790049565.668958553] [aruco_tracker]: Marker detections will be published in the camera frame
+[aruco] [INFO] [1790049565.668970266] [aruco_tracker]: Marker Dictionary name: 5X5_50
+[aruco] [INFO] [1790049565.668986842] [aruco_tracker]: TF publishing is enabled
+[aruco] [INFO] [1790049565.669022907] [aruco_tracker]: Marker size: 0.15
+[aruco] [INFO] [1790049565.669034203] [aruco_tracker]: Aruco Parameters:
+[aruco] [INFO] [1790049565.669064572] [aruco_tracker]:  * adaptiveThreshWinSizeMin: 3
+[aruco] [INFO] [1790049565.669076604] [aruco_tracker]:  * adaptiveThreshWinSizeMax: 23
+[aruco] [INFO] [1790049565.669086013] [aruco_tracker]:  * adaptiveThreshWinSizeStep: 10
+[aruco] [INFO] [1790049565.669097021] [aruco_tracker]:  * adaptiveThreshConstant: 7
+[aruco] [INFO] [1790049565.669108221] [aruco_tracker]:  * minMarkerPerimeterRate: 0.03
+[aruco] [INFO] [1790049565.669118110] [aruco_tracker]:  * maxMarkerPerimeterRate: 4
+[aruco] [INFO] [1790049565.669127646] [aruco_tracker]:  * polygonalApproxAccuracyRate: 0.03
+[aruco] [INFO] [1790049565.669137118] [aruco_tracker]:  * minCornerDistanceRate: 0.05
+[aruco] [INFO] [1790049565.669146270] [aruco_tracker]:  * minDistanceToBorder: 3
+[aruco] [INFO] [1790049565.669155230] [aruco_tracker]:  * minMarkerDistanceRate: 0.05
+[aruco] [INFO] [1790049565.669164159] [aruco_tracker]:  * markerBorderBits: 1
+[aruco] [INFO] [1790049565.669172799] [aruco_tracker]:  * perspectiveRemovePixelPerCell: 4
+[aruco] [INFO] [1790049565.669182463] [aruco_tracker]:  * perspectiveRemoveIgnoredMarginPerCell: 0.13
+[aruco] [INFO] [1790049565.669192095] [aruco_tracker]:  * maxErroneousBitsInBorderRate: 0.35
+[aruco] [INFO] [1790049565.669201504] [aruco_tracker]:  * minOtsuStdDev: 5
+[aruco] [INFO] [1790049565.669210720] [aruco_tracker]:  * errorCorrectionRate: 0.6
+[ERR] [aruco] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[aruco] [INFO] [1790049565.669228672] [aruco_tracker]:  * cornerRefinementMethod: 2 (CONTOUR)
+[aruco] [INFO] [1790049565.669238561] [aruco_tracker]:  * cornerRefinementWinSize: 5
+[aruco] [INFO] [1790049565.669253953] [aruco_tracker]:  * cornerRefinementMaxIterations: 30
+[aruco] [INFO] [1790049565.669264321] [aruco_tracker]:  * cornerRefinementMinAccuracy: 0.1
+[aruco] [INFO] [1790049565.678236455] [aruco_tracker]: Activating
+[aruco] [INFO] [1790049565.678309577] [aruco_tracker]: Waiting for first camera info...
+[camera] [INFO] [1790049565.681989640] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1790049565.685250683] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1790049565.685322653] [usb_cam]: Starting 'default_cam' (/dev/video0) at 1280x720 via mmap (mjpeg2rgb) at 30 FPS
+[camera] [swscaler @ 0xaaab253cb9f0] No accelerated colorspace conversion found from yuv422p to rgb24.
+[camera] [INFO] [1790049566.162369958] [usb_cam]: This devices supproted formats:
+[camera] [INFO] [1790049566.162729423] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (30 Hz)
+[camera] [INFO] [1790049566.162749104] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (25 Hz)
+[camera] [INFO] [1790049566.162758480] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (20 Hz)
+[camera] [INFO] [1790049566.162766320] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (15 Hz)
+[camera] [INFO] [1790049566.162772912] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (10 Hz)
+[camera] [INFO] [1790049566.162779152] [usb_cam]: 	YUYV 4:2:2: 640 x 480 (5 Hz)
+[camera] [INFO] [1790049566.162785649] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (30 Hz)
+[camera] [INFO] [1790049566.162791953] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (25 Hz)
+[camera] [INFO] [1790049566.162798801] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (20 Hz)
+[camera] [INFO] [1790049566.162805137] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (15 Hz)
+[camera] [INFO] [1790049566.162811953] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (10 Hz)
+[camera] [INFO] [1790049566.162818321] [usb_cam]: 	YUYV 4:2:2: 160 x 120 (5 Hz)
+[camera] [INFO] [1790049566.162825234] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (30 Hz)
+[camera] [INFO] [1790049566.162831506] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (25 Hz)
+[camera] [INFO] [1790049566.162837938] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (20 Hz)
+[camera] [INFO] [1790049566.162844082] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (15 Hz)
+[camera] [INFO] [1790049566.162850866] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (10 Hz)
+[camera] [INFO] [1790049566.162857106] [usb_cam]: 	YUYV 4:2:2: 176 x 144 (5 Hz)
+[camera] [INFO] [1790049566.162863891] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (30 Hz)
+[camera] [INFO] [1790049566.162869971] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (25 Hz)
+[camera] [INFO] [1790049566.162876627] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (20 Hz)
+[camera] [INFO] [1790049566.162901844] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (15 Hz)
+[camera] [INFO] [1790049566.162908436] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (10 Hz)
+[camera] [INFO] [1790049566.162914964] [usb_cam]: 	YUYV 4:2:2: 320 x 176 (5 Hz)
+[camera] [INFO] [1790049566.162921524] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (30 Hz)
+[camera] [INFO] [1790049566.162927540] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (25 Hz)
+[camera] [INFO] [1790049566.162934356] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (20 Hz)
+[camera] [INFO] [1790049566.162941173] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (15 Hz)
+[camera] [INFO] [1790049566.162947509] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (10 Hz)
+[camera] [INFO] [1790049566.162953557] [usb_cam]: 	YUYV 4:2:2: 320 x 240 (5 Hz)
+[camera] [INFO] [1790049566.162960053] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (30 Hz)
+[camera] [INFO] [1790049566.162966613] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (25 Hz)
+[camera] [INFO] [1790049566.162972789] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (20 Hz)
+[camera] [INFO] [1790049566.162979414] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (15 Hz)
+[camera] [INFO] [1790049566.162985942] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (10 Hz)
+[camera] [INFO] [1790049566.162992470] [usb_cam]: 	YUYV 4:2:2: 352 x 288 (5 Hz)
+[camera] [INFO] [1790049566.162999062] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (30 Hz)
+[camera] [INFO] [1790049566.163005270] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (25 Hz)
+[camera] [INFO] [1790049566.163011222] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (20 Hz)
+[camera] [INFO] [1790049566.163018487] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (15 Hz)
+[camera] [INFO] [1790049566.163025047] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (10 Hz)
+[camera] [INFO] [1790049566.163031671] [usb_cam]: 	YUYV 4:2:2: 432 x 240 (5 Hz)
+[camera] [INFO] [1790049566.163038103] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (30 Hz)
+[camera] [INFO] [1790049566.163044471] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (25 Hz)
+[camera] [INFO] [1790049566.163050647] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (20 Hz)
+[camera] [INFO] [1790049566.163056760] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (15 Hz)
+[camera] [INFO] [1790049566.163062808] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (10 Hz)
+[camera] [INFO] [1790049566.163068856] [usb_cam]: 	YUYV 4:2:2: 544 x 288 (5 Hz)
+[camera] [INFO] [1790049566.163075192] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (30 Hz)
+[camera] [INFO] [1790049566.163169818] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (25 Hz)
+[camera] [INFO] [1790049566.163184091] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (20 Hz)
+[camera] [INFO] [1790049566.163191131] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (15 Hz)
+[camera] [INFO] [1790049566.163197915] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (10 Hz)
+[camera] [INFO] [1790049566.163204155] [usb_cam]: 	YUYV 4:2:2: 640 x 360 (5 Hz)
+[camera] [INFO] [1790049566.163212476] [usb_cam]: 	YUYV 4:2:2: 752 x 416 (25 Hz)
+[camera] [INFO] [1790049566.163218876] [usb_cam]: 	YUYV 4:2:2: 752 x 416 (20 Hz)
+[camera] [INFO] [1790049566.163226236] [usb_cam]: 	YUYV 4:2:2: 752 x 416 (15 Hz)
+[camera] [INFO] [1790049566.163232444] [usb_cam]: 	YUYV 4:2:2: 752 x 416 (10 Hz)
+[camera] [INFO] [1790049566.163239676] [usb_cam]: 	YUYV 4:2:2: 752 x 416 (5 Hz)
+[camera] [INFO] [1790049566.163246588] [usb_cam]: 	YUYV 4:2:2: 800 x 448 (20 Hz)
+[camera] [INFO] [1790049566.163254877] [usb_cam]: 	YUYV 4:2:2: 800 x 448 (15 Hz)
+[camera] [INFO] [1790049566.163262717] [usb_cam]: 	YUYV 4:2:2: 800 x 448 (10 Hz)
+[camera] [INFO] [1790049566.163268989] [usb_cam]: 	YUYV 4:2:2: 800 x 448 (5 Hz)
+[camera] [INFO] [1790049566.163275613] [usb_cam]: 	YUYV 4:2:2: 800 x 600 (20 Hz)
+[camera] [INFO] [1790049566.163281885] [usb_cam]: 	YUYV 4:2:2: 800 x 600 (15 Hz)
+[camera] [INFO] [1790049566.163288574] [usb_cam]: 	YUYV 4:2:2: 800 x 600 (10 Hz)
+[camera] [INFO] [1790049566.163295710] [usb_cam]: 	YUYV 4:2:2: 800 x 600 (5 Hz)
+[camera] [INFO] [1790049566.163302686] [usb_cam]: 	YUYV 4:2:2: 864 x 480 (20 Hz)
+[camera] [INFO] [1790049566.163310270] [usb_cam]: 	YUYV 4:2:2: 864 x 480 (15 Hz)
+[camera] [INFO] [1790049566.163316830] [usb_cam]: 	YUYV 4:2:2: 864 x 480 (10 Hz)
+[camera] [INFO] [1790049566.163323550] [usb_cam]: 	YUYV 4:2:2: 864 x 480 (5 Hz)
+[camera] [INFO] [1790049566.163330559] [usb_cam]: 	YUYV 4:2:2: 960 x 544 (15 Hz)
+[camera] [INFO] [1790049566.163337471] [usb_cam]: 	YUYV 4:2:2: 960 x 544 (10 Hz)
+[camera] [INFO] [1790049566.163345119] [usb_cam]: 	YUYV 4:2:2: 960 x 544 (5 Hz)
+[camera] [INFO] [1790049566.163352479] [usb_cam]: 	YUYV 4:2:2: 960 x 720 (10 Hz)
+[camera] [INFO] [1790049566.163359071] [usb_cam]: 	YUYV 4:2:2: 960 x 720 (5 Hz)
+[camera] [INFO] [1790049566.163365888] [usb_cam]: 	YUYV 4:2:2: 1024 x 576 (10 Hz)
+[camera] [INFO] [1790049566.163373472] [usb_cam]: 	YUYV 4:2:2: 1024 x 576 (5 Hz)
+[camera] [INFO] [1790049566.163381440] [usb_cam]: 	YUYV 4:2:2: 1184 x 656 (10 Hz)
+[camera] [INFO] [1790049566.163388320] [usb_cam]: 	YUYV 4:2:2: 1184 x 656 (5 Hz)
+[camera] [INFO] [1790049566.163395168] [usb_cam]: 	YUYV 4:2:2: 1280 x 720 (7 Hz)
+[camera] [INFO] [1790049566.163402016] [usb_cam]: 	YUYV 4:2:2: 1280 x 720 (5 Hz)
+[camera] [INFO] [1790049566.163411393] [usb_cam]: 	YUYV 4:2:2: 1280 x 960 (7 Hz)
+[camera] [INFO] [1790049566.163418241] [usb_cam]: 	YUYV 4:2:2: 1280 x 960 (5 Hz)
+[camera] [INFO] [1790049566.163425537] [usb_cam]: 	Motion-JPEG: 640 x 480 (30 Hz)
+[camera] [INFO] [1790049566.163432577] [usb_cam]: 	Motion-JPEG: 640 x 480 (25 Hz)
+[camera] [INFO] [1790049566.163439329] [usb_cam]: 	Motion-JPEG: 640 x 480 (20 Hz)
+[camera] [INFO] [1790049566.163447810] [usb_cam]: 	Motion-JPEG: 640 x 480 (15 Hz)
+[camera] [INFO] [1790049566.163454466] [usb_cam]: 	Motion-JPEG: 640 x 480 (10 Hz)
+[camera] [INFO] [1790049566.163460994] [usb_cam]: 	Motion-JPEG: 640 x 480 (5 Hz)
+[camera] [INFO] [1790049566.163468034] [usb_cam]: 	Motion-JPEG: 160 x 120 (30 Hz)
+[camera] [INFO] [1790049566.163475714] [usb_cam]: 	Motion-JPEG: 160 x 120 (25 Hz)
+[camera] [INFO] [1790049566.163482243] [usb_cam]: 	Motion-JPEG: 160 x 120 (20 Hz)
+[camera] [INFO] [1790049566.163489123] [usb_cam]: 	Motion-JPEG: 160 x 120 (15 Hz)
+[camera] [INFO] [1790049566.163497027] [usb_cam]: 	Motion-JPEG: 160 x 120 (10 Hz)
+[camera] [INFO] [1790049566.163506723] [usb_cam]: 	Motion-JPEG: 160 x 120 (5 Hz)
+[camera] [INFO] [1790049566.163524804] [usb_cam]: 	Motion-JPEG: 176 x 144 (30 Hz)
+[camera] [INFO] [1790049566.163534020] [usb_cam]: 	Motion-JPEG: 176 x 144 (25 Hz)
+[camera] [INFO] [1790049566.163540996] [usb_cam]: 	Motion-JPEG: 176 x 144 (20 Hz)
+[camera] [INFO] [1790049566.163547364] [usb_cam]: 	Motion-JPEG: 176 x 144 (15 Hz)
+[camera] [INFO] [1790049566.163554020] [usb_cam]: 	Motion-JPEG: 176 x 144 (10 Hz)
+[camera] [INFO] [1790049566.163560517] [usb_cam]: 	Motion-JPEG: 176 x 144 (5 Hz)
+[camera] [INFO] [1790049566.163566949] [usb_cam]: 	Motion-JPEG: 320 x 176 (30 Hz)
+[camera] [INFO] [1790049566.163574597] [usb_cam]: 	Motion-JPEG: 320 x 176 (25 Hz)
+[camera] [INFO] [1790049566.163580933] [usb_cam]: 	Motion-JPEG: 320 x 176 (20 Hz)
+[camera] [INFO] [1790049566.163587525] [usb_cam]: 	Motion-JPEG: 320 x 176 (15 Hz)
+[camera] [INFO] [1790049566.163606854] [usb_cam]: 	Motion-JPEG: 320 x 176 (10 Hz)
+[camera] [INFO] [1790049566.163618630] [usb_cam]: 	Motion-JPEG: 320 x 176 (5 Hz)
+[camera] [INFO] [1790049566.163626054] [usb_cam]: 	Motion-JPEG: 320 x 240 (30 Hz)
+[camera] [INFO] [1790049566.163634278] [usb_cam]: 	Motion-JPEG: 320 x 240 (25 Hz)
+[camera] [INFO] [1790049566.163641127] [usb_cam]: 	Motion-JPEG: 320 x 240 (20 Hz)
+[camera] [INFO] [1790049566.163647367] [usb_cam]: 	Motion-JPEG: 320 x 240 (15 Hz)
+[camera] [INFO] [1790049566.163653479] [usb_cam]: 	Motion-JPEG: 320 x 240 (10 Hz)
+[camera] [INFO] [1790049566.163660167] [usb_cam]: 	Motion-JPEG: 320 x 240 (5 Hz)
+[camera] [INFO] [1790049566.163668455] [usb_cam]: 	Motion-JPEG: 352 x 288 (30 Hz)
+[camera] [INFO] [1790049566.163674919] [usb_cam]: 	Motion-JPEG: 352 x 288 (25 Hz)
+[camera] [INFO] [1790049566.163681480] [usb_cam]: 	Motion-JPEG: 352 x 288 (20 Hz)
+[camera] [INFO] [1790049566.163691368] [usb_cam]: 	Motion-JPEG: 352 x 288 (15 Hz)
+[camera] [INFO] [1790049566.163699528] [usb_cam]: 	Motion-JPEG: 352 x 288 (10 Hz)
+[camera] [INFO] [1790049566.163705800] [usb_cam]: 	Motion-JPEG: 352 x 288 (5 Hz)
+[camera] [INFO] [1790049566.163711880] [usb_cam]: 	Motion-JPEG: 432 x 240 (30 Hz)
+[camera] [INFO] [1790049566.163718121] [usb_cam]: 	Motion-JPEG: 432 x 240 (25 Hz)
+[camera] [INFO] [1790049566.163724329] [usb_cam]: 	Motion-JPEG: 432 x 240 (20 Hz)
+[camera] [INFO] [1790049566.163732777] [usb_cam]: 	Motion-JPEG: 432 x 240 (15 Hz)
+[camera] [INFO] [1790049566.163741769] [usb_cam]: 	Motion-JPEG: 432 x 240 (10 Hz)
+[camera] [INFO] [1790049566.163748489] [usb_cam]: 	Motion-JPEG: 432 x 240 (5 Hz)
+[camera] [INFO] [1790049566.163754857] [usb_cam]: 	Motion-JPEG: 544 x 288 (30 Hz)
+[camera] [INFO] [1790049566.163762442] [usb_cam]: 	Motion-JPEG: 544 x 288 (25 Hz)
+[camera] [INFO] [1790049566.163769930] [usb_cam]: 	Motion-JPEG: 544 x 288 (20 Hz)
+[camera] [INFO] [1790049566.163776554] [usb_cam]: 	Motion-JPEG: 544 x 288 (15 Hz)
+[camera] [INFO] [1790049566.163782826] [usb_cam]: 	Motion-JPEG: 544 x 288 (10 Hz)
+[camera] [INFO] [1790049566.163789162] [usb_cam]: 	Motion-JPEG: 544 x 288 (5 Hz)
+[camera] [INFO] [1790049566.163795499] [usb_cam]: 	Motion-JPEG: 640 x 360 (30 Hz)
+[camera] [INFO] [1790049566.163802827] [usb_cam]: 	Motion-JPEG: 640 x 360 (25 Hz)
+[camera] [INFO] [1790049566.163808939] [usb_cam]: 	Motion-JPEG: 640 x 360 (20 Hz)
+[camera] [INFO] [1790049566.163815211] [usb_cam]: 	Motion-JPEG: 640 x 360 (15 Hz)
+[camera] [INFO] [1790049566.163821355] [usb_cam]: 	Motion-JPEG: 640 x 360 (10 Hz)
+[camera] [INFO] [1790049566.163827595] [usb_cam]: 	Motion-JPEG: 640 x 360 (5 Hz)
+[camera] [INFO] [1790049566.163835020] [usb_cam]: 	Motion-JPEG: 752 x 416 (30 Hz)
+[camera] [INFO] [1790049566.163841228] [usb_cam]: 	Motion-JPEG: 752 x 416 (25 Hz)
+[camera] [INFO] [1790049566.163850476] [usb_cam]: 	Motion-JPEG: 752 x 416 (20 Hz)
+[camera] [INFO] [1790049566.163858732] [usb_cam]: 	Motion-JPEG: 752 x 416 (15 Hz)
+[camera] [INFO] [1790049566.163865324] [usb_cam]: 	Motion-JPEG: 752 x 416 (10 Hz)
+[camera] [INFO] [1790049566.163871660] [usb_cam]: 	Motion-JPEG: 752 x 416 (5 Hz)
+[camera] [INFO] [1790049566.163877805] [usb_cam]: 	Motion-JPEG: 800 x 448 (30 Hz)
+[camera] [INFO] [1790049566.163884525] [usb_cam]: 	Motion-JPEG: 800 x 448 (25 Hz)
+[camera] [INFO] [1790049566.163891949] [usb_cam]: 	Motion-JPEG: 800 x 448 (20 Hz)
+[camera] [INFO] [1790049566.163898317] [usb_cam]: 	Motion-JPEG: 800 x 448 (15 Hz)
+[camera] [INFO] [1790049566.163905677] [usb_cam]: 	Motion-JPEG: 800 x 448 (10 Hz)
+[camera] [INFO] [1790049566.163911950] [usb_cam]: 	Motion-JPEG: 800 x 448 (5 Hz)
+[camera] [INFO] [1790049566.163918382] [usb_cam]: 	Motion-JPEG: 800 x 600 (30 Hz)
+[camera] [INFO] [1790049566.163924622] [usb_cam]: 	Motion-JPEG: 800 x 600 (25 Hz)
+[camera] [INFO] [1790049566.163930702] [usb_cam]: 	Motion-JPEG: 800 x 600 (20 Hz)
+[camera] [INFO] [1790049566.163937422] [usb_cam]: 	Motion-JPEG: 800 x 600 (15 Hz)
+[camera] [INFO] [1790049566.163944078] [usb_cam]: 	Motion-JPEG: 800 x 600 (10 Hz)
+[camera] [INFO] [1790049566.163951343] [usb_cam]: 	Motion-JPEG: 800 x 600 (5 Hz)
+[camera] [INFO] [1790049566.163959055] [usb_cam]: 	Motion-JPEG: 864 x 480 (30 Hz)
+[camera] [INFO] [1790049566.163965391] [usb_cam]: 	Motion-JPEG: 864 x 480 (25 Hz)
+[camera] [INFO] [1790049566.163971951] [usb_cam]: 	Motion-JPEG: 864 x 480 (20 Hz)
+[camera] [INFO] [1790049566.163978479] [usb_cam]: 	Motion-JPEG: 864 x 480 (15 Hz)
+[camera] [INFO] [1790049566.163985871] [usb_cam]: 	Motion-JPEG: 864 x 480 (10 Hz)
+[camera] [INFO] [1790049566.163992656] [usb_cam]: 	Motion-JPEG: 864 x 480 (5 Hz)
+[camera] [INFO] [1790049566.164008784] [usb_cam]: 	Motion-JPEG: 960 x 544 (30 Hz)
+[camera] [INFO] [1790049566.164019856] [usb_cam]: 	Motion-JPEG: 960 x 544 (25 Hz)
+[camera] [INFO] [1790049566.164026736] [usb_cam]: 	Motion-JPEG: 960 x 544 (20 Hz)
+[camera] [INFO] [1790049566.164036849] [usb_cam]: 	Motion-JPEG: 960 x 544 (15 Hz)
+[camera] [INFO] [1790049566.164045233] [usb_cam]: 	Motion-JPEG: 960 x 544 (10 Hz)
+[camera] [INFO] [1790049566.164051857] [usb_cam]: 	Motion-JPEG: 960 x 544 (5 Hz)
+[camera] [INFO] [1790049566.164057873] [usb_cam]: 	Motion-JPEG: 960 x 720 (30 Hz)
+[camera] [INFO] [1790049566.164063761] [usb_cam]: 	Motion-JPEG: 960 x 720 (25 Hz)
+[camera] [INFO] [1790049566.164069586] [usb_cam]: 	Motion-JPEG: 960 x 720 (20 Hz)
+[camera] [INFO] [1790049566.164075410] [usb_cam]: 	Motion-JPEG: 960 x 720 (15 Hz)
+[camera] [INFO] [1790049566.164081202] [usb_cam]: 	Motion-JPEG: 960 x 720 (10 Hz)
+[camera] [INFO] [1790049566.164087058] [usb_cam]: 	Motion-JPEG: 960 x 720 (5 Hz)
+[camera] [INFO] [1790049566.164092978] [usb_cam]: 	Motion-JPEG: 1024 x 576 (30 Hz)
+[camera] [INFO] [1790049566.164098898] [usb_cam]: 	Motion-JPEG: 1024 x 576 (25 Hz)
+[camera] [INFO] [1790049566.164104754] [usb_cam]: 	Motion-JPEG: 1024 x 576 (20 Hz)
+[camera] [INFO] [1790049566.164110483] [usb_cam]: 	Motion-JPEG: 1024 x 576 (15 Hz)
+[camera] [INFO] [1790049566.164116371] [usb_cam]: 	Motion-JPEG: 1024 x 576 (10 Hz)
+[camera] [INFO] [1790049566.164122131] [usb_cam]: 	Motion-JPEG: 1024 x 576 (5 Hz)
+[camera] [INFO] [1790049566.164127955] [usb_cam]: 	Motion-JPEG: 1184 x 656 (30 Hz)
+[camera] [INFO] [1790049566.164134035] [usb_cam]: 	Motion-JPEG: 1184 x 656 (25 Hz)
+[camera] [INFO] [1790049566.164139827] [usb_cam]: 	Motion-JPEG: 1184 x 656 (20 Hz)
+[camera] [INFO] [1790049566.164145620] [usb_cam]: 	Motion-JPEG: 1184 x 656 (15 Hz)
+[camera] [INFO] [1790049566.164151540] [usb_cam]: 	Motion-JPEG: 1184 x 656 (10 Hz)
+[camera] [INFO] [1790049566.164157428] [usb_cam]: 	Motion-JPEG: 1184 x 656 (5 Hz)
+[camera] [INFO] [1790049566.164163284] [usb_cam]: 	Motion-JPEG: 1280 x 720 (30 Hz)
+[camera] [INFO] [1790049566.164169140] [usb_cam]: 	Motion-JPEG: 1280 x 720 (25 Hz)
+[camera] [INFO] [1790049566.164174932] [usb_cam]: 	Motion-JPEG: 1280 x 720 (20 Hz)
+[camera] [INFO] [1790049566.164180660] [usb_cam]: 	Motion-JPEG: 1280 x 720 (15 Hz)
+[camera] [INFO] [1790049566.164186485] [usb_cam]: 	Motion-JPEG: 1280 x 720 (10 Hz)
+[camera] [INFO] [1790049566.164192245] [usb_cam]: 	Motion-JPEG: 1280 x 720 (5 Hz)
+[camera] [INFO] [1790049566.164205461] [usb_cam]: 	Motion-JPEG: 1280 x 960 (30 Hz)
+[camera] [INFO] [1790049566.164211669] [usb_cam]: 	Motion-JPEG: 1280 x 960 (25 Hz)
+[camera] [INFO] [1790049566.164217493] [usb_cam]: 	Motion-JPEG: 1280 x 960 (20 Hz)
+[camera] [INFO] [1790049566.164224822] [usb_cam]: 	Motion-JPEG: 1280 x 960 (15 Hz)
+[camera] [INFO] [1790049566.164231158] [usb_cam]: 	Motion-JPEG: 1280 x 960 (10 Hz)
+[camera] [INFO] [1790049566.164237014] [usb_cam]: 	Motion-JPEG: 1280 x 960 (5 Hz)
+[camera] [INFO] [1790049566.164243350] [usb_cam]: Setting 'brightness' to 50
+[camera] [INFO] [1790049566.226666614] [usb_cam]: Setting 'white_balance_temperature_auto' to 1
+[camera] [INFO] [1790049566.226772601] [usb_cam]: Setting 'exposure_auto' to 3
+[camera] [INFO] [1790049566.246508915] [usb_cam]: Setting 'focus_auto' to 0
+[camera] unknown control 'focus_auto'
+[camera] 
+[camera] [INFO] [1790049566.474493959] [usb_cam]: Timer triggering every 33 ms
+[aruco] [INFO] [1790049566.554329798] [aruco_tracker]: First camera info retrieved.
+[xrce] [35m[1790049566.590723][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790049566.591067][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[mission] [INFO] [1790050672.491573680] [search_phase_node]: 탐색 페이즈 시작 — 방문 순서 28칸, 목표 마커 4개
+[mission] [프로세스 종료됨]

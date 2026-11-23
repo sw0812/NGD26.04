@@ -1,0 +1,63 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-29 15:34:00 ===
+[xrce] [35m[1790663640.951394][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790663640.952183][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[aruco] [INFO] [1790663672.126460378] [aruco_tracker]: Configuring
+[aruco] [INFO] [1790663672.126832487] [aruco_tracker]: Camera Base Topic: camera/image_raw
+[aruco] [INFO] [1790663672.126869544] [aruco_tracker]: Assume images are rectified: NO
+[aruco] [INFO] [1790663672.126884233] [aruco_tracker]: Marker detections will be published in the camera frame
+[aruco] [INFO] [1790663672.126895465] [aruco_tracker]: Marker Dictionary name: 5X5_50
+[aruco] [INFO] [1790663672.126911754] [aruco_tracker]: TF publishing is enabled
+[aruco] [INFO] [1790663672.126946891] [aruco_tracker]: Marker size: 0.15
+[aruco] [INFO] [1790663672.126962475] [aruco_tracker]: Aruco Parameters:
+[aruco] [INFO] [1790663672.126989740] [aruco_tracker]:  * adaptiveThreshWinSizeMin: 3
+[aruco] [INFO] [1790663672.127000973] [aruco_tracker]:  * adaptiveThreshWinSizeMax: 23
+[aruco] [INFO] [1790663672.127009453] [aruco_tracker]:  * adaptiveThreshWinSizeStep: 10
+[aruco] [INFO] [1790663672.127019277] [aruco_tracker]:  * adaptiveThreshConstant: 7
+[aruco] [INFO] [1790663672.127029070] [aruco_tracker]:  * minMarkerPerimeterRate: 0.03
+[aruco] [INFO] [1790663672.127038094] [aruco_tracker]:  * maxMarkerPerimeterRate: 4
+[aruco] [INFO] [1790663672.127047118] [aruco_tracker]:  * polygonalApproxAccuracyRate: 0.03
+[aruco] [INFO] [1790663672.127056526] [aruco_tracker]:  * minCornerDistanceRate: 0.05
+[aruco] [INFO] [1790663672.127064847] [aruco_tracker]:  * minDistanceToBorder: 3
+[aruco] [INFO] [1790663672.127073103] [aruco_tracker]:  * minMarkerDistanceRate: 0.05
+[aruco] [INFO] [1790663672.127080975] [aruco_tracker]:  * markerBorderBits: 1
+[aruco] [INFO] [1790663672.127089200] [aruco_tracker]:  * perspectiveRemovePixelPerCell: 4
+[aruco] [INFO] [1790663672.127097744] [aruco_tracker]:  * perspectiveRemoveIgnoredMarginPerCell: 0.13
+[aruco] [INFO] [1790663672.127106640] [aruco_tracker]:  * maxErroneousBitsInBorderRate: 0.35
+[aruco] [INFO] [1790663672.127114960] [aruco_tracker]:  * minOtsuStdDev: 5
+[aruco] [INFO] [1790663672.127123569] [aruco_tracker]:  * errorCorrectionRate: 0.6
+[ERR] [aruco] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[aruco] [INFO] [1790663672.127140305] [aruco_tracker]:  * cornerRefinementMethod: 2 (CONTOUR)
+[aruco] [INFO] [1790663672.127149906] [aruco_tracker]:  * cornerRefinementWinSize: 5
+[aruco] [INFO] [1790663672.127161042] [aruco_tracker]:  * cornerRefinementMaxIterations: 30
+[aruco] [INFO] [1790663672.127171026] [aruco_tracker]:  * cornerRefinementMinAccuracy: 0.1
+[aruco] [INFO] [1790663672.139318474] [aruco_tracker]: Activating
+[aruco] [INFO] [1790663672.139431790] [aruco_tracker]: Waiting for first camera info...
+[aruco] [INFO] [1790663672.466411609] [aruco_tracker]: First camera info retrieved.
+[qgc] Error response from daemon: container 4a6962d47c553cc7e8af193b4552cfead9e7e27fbed329d302238d56313da1f4 is not running
+[ERR] [qgc] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[qgc] [프로세스 종료됨]
+[mission] [INFO] [1790663683.144783943] [search_phase_node]: 탐색 페이즈 시작 — 방문 순서 28칸, 목표 마커 4개
+[xrce] [프로세스 종료됨]
+[mission] [INFO] [1790663707.975462105] [search_phase_node]: [SEARCH] 교차점 도달 (1,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663710.378857798] [search_phase_node]: ArUco ID1 확정 @ grid(1, 0) world(8.0, 5.0) — 총 1/4
+[mission] [INFO] [1790663710.379439417] [search_phase_node]: [SEARCH] 교차점 도달 (2,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663712.993919381] [search_phase_node]: [SEARCH] 교차점 도달 (3,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663715.405267912] [search_phase_node]: [SEARCH] 교차점 도달 (4,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663717.698630655] [search_phase_node]: [SEARCH] 교차점 도달 (5,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663720.093593960] [search_phase_node]: [SEARCH] 교차점 도달 (6,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790663722.516591292] [search_phase_node]: [SEARCH] 교차점 도달 (6,1) -> LEFT -> heading=N
+[mission] [INFO] [1790663726.300105153] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,1)
+[mission] [INFO] [1790663727.315124996] [search_phase_node]: [SEARCH] 교차점 도달 (5,1) -> LEFT -> heading=W
+[mission] [INFO] [1790663732.200047991] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,1)
+[mission] [INFO] [1790663733.023236654] [search_phase_node]: [SEARCH] 교차점 도달 (4,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790663735.399662458] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,1)
+[mission] [INFO] [1790663736.220227512] [search_phase_node]: ArUco ID3 확정 @ grid(4, 1) world(17.0, 8.0) — 총 2/4
+[mission] [INFO] [1790663736.220810507] [search_phase_node]: [SEARCH] 교차점 도달 (3,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790663738.549733658] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,1)
+[mission] [INFO] [1790663739.632087212] [search_phase_node]: [SEARCH] 교차점 도달 (2,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790663741.949755870] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,1)
+[mission] [INFO] [1790663742.741346221] [search_phase_node]: [SEARCH] 교차점 도달 (1,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790663744.950075379] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,1)
+[mission] [INFO] [1790663745.846966160] [search_phase_node]: [SEARCH] 교차점 도달 (0,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790663748.050335104] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (0,1)
+[mission] [INFO] [1790663748.854809277] [search_phase_node]: [SEARCH] 교차점 도달 (0,2) -> RIGHT -> heading=N

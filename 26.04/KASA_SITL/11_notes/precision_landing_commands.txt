@@ -1,0 +1,10 @@
+./Tools/simulation/gazebo-classic/sitl_run.sh $(pwd)/build/px4_sitl_default/bin/px4 none iris_aruco_cam none $(pwd) $(pwd)/build/px4_sitl_default
+ gz model -m aruco_marker -x 0.5 -y 0.5 -z 0.09
+~/Micro-XRCE-DDS-Agent/build/MicroXRCEAgent udp4 -p 8888
+ros2 run precision_landing landing
+ros2 run aruco_opencv aruco_tracker
+ros2 run rqt_image_view rqt_image_view
+
+ros2 lifecycle set /aruco_tracker configure
+ros2 lifecycle set /aruco_tracker activate
+

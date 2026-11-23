@@ -1,0 +1,5 @@
+- ros_topic_name: /camera_front/image_raw
+  gz_topic_name: /world/kasa_indoor_search/model/tarot680pro_0/link/camera_front_link/sensor/camera_front/image
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: gz.msgs.Image
+  direction: GZ_TO_ROS

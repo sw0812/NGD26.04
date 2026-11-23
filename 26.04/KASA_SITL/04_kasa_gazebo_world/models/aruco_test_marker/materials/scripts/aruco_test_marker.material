@@ -1,0 +1,16 @@
+material Kasa/ArucoTestMarker0
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture marker0.png
+        filtering trilinear
+      }
+    }
+  }
+}

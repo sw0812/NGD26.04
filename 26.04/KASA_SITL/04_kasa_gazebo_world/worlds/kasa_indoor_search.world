@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!-- 자동 생성 파일 - 직접 수정하지 말고 scripts/generate_field.py 를 고친 뒤 재실행하세요. -->
+<sdf version="1.6">
+  <world name="kasa_indoor_search">
+
+    <!-- 2026-11-04: libgazebo_ros_init.so (/clock 퍼블리셔)는 WorldPlugin이 아니라
+         SystemPlugin이라 여기 <world><plugin>으로 넣으면 "incorrect plugin type"
+         에러가 남 - gzserver 실행 커맨드에 `-s libgazebo_ros_init.so`로 로드해야
+         함 (kasa_tarot_launch.sh 쪽에서 처리). -->
+
+    <!-- model://sun include 대신 직접 정의 (온라인 모델 DB 조회로 인한 hang 방지) -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- 실내(공장) 임무 컨셉 - 낮은 조도 -->
+    <scene>
+      <ambient>0.35 0.35 0.38 1</ambient>
+      <background>0.1 0.1 0.12 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+
+    <!-- ===================================================================
+         좌표계: 버티포트(출발점) 중심 = (0,0,0). 규정 '출발점 기준' 과 일치.
+         드론 스폰 위치 : (0.0, 0.0, 0.75)  <- 버티포트 상판 위
+         Mission area   : x [2.0 .. 26.0]  y [2.0 .. 17.0]
+         경로점(ArUco)   : ID1(8.0, 5.0), ID2(11.0, 14.0), ID3(17.0, 8.0), ID4(23.0, 14.0)
+         =================================================================== -->
+
+    <!-- 바닥면: safe area 32x23m + mission area 24x15m + 3m 격자 + 경로점 ArUco 4개 -->
+    <include>
+      <uri>model://kasa_ground_field</uri>
+      <pose>14.0 9.5 0 0 0 0</pose>
+    </include>
+
+    <!-- 버티포트: 지름 3m, 높이 0.7m, 상판에 V픽토그램 + 중앙 ArUco(ID0) -->
+    <include>
+      <uri>model://vertiport_pad</uri>
+      <pose>0.0 0.0 0 0 0 0</pose>
+    </include>
+
+    <!-- 2026-11-04: tarot680pro embedded directly in the world instead of
+         spawned later via `gz model --spawn-file` - the external spawn
+         (after gzserver is already running) was leaving the GPS plugin's
+         very first samples looking discontinuous to EKF2, which latched
+         ESTIMATOR_GPS_GLITCH permanently and blocked arming no matter what
+         EKF2 param was changed. Embedding it here so it's part of the
+         world's state from t=0, like the standard `make px4_sitl` flow's
+         empty.world does, fixed it (confirmed via isolated A/B test). -->
+    <include>
+      <uri>model://tarot680pro</uri>
+      <pose>0.0 0.0 0.75 0 0 0</pose>
+    </include>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>12.0 -14.5 20 0 0.72 1.5708</pose>
+      </camera>
+    </gui>
+
+  </world>
+</sdf>

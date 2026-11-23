@@ -1,0 +1,224 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-09 16:29:40 ===
+[xrce] [35m[1788939017.621566][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1788939017.622127][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [35m[1788939017.866772][m info     | [34mRoot.cpp          [m | [37mcreate_client           [m | [32mcreate[m                 | client_key: 0x00000001, session_id: 0x81
+[xrce] [35m[1788939017.866862][m info     | [34mSessionManager.hpp[m | [37mestablish_session       [m | [32msession established[m    | client_key: 0x00000001, address: 1
+[xrce] [35m[1788939017.877005][m info     | [34mProxyClient.cpp   [m | [37mcreate_participant      [m | [32mparticipant created[m    | client_key: 0x00000001, participant_id: 0x001(1)
+[xrce] [35m[1788939023.648230][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x800(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.648502][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x800(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.654783][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x800(6), subscriber_id: 0x800(4)
+[xrce] [35m[1788939023.658127][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x801(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.658243][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x801(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.659394][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x801(6), subscriber_id: 0x801(4)
+[xrce] [35m[1788939023.662547][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x802(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.662674][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x802(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.663833][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x802(6), subscriber_id: 0x802(4)
+[xrce] [35m[1788939023.667000][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x803(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.667132][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x803(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.668315][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x803(6), subscriber_id: 0x803(4)
+[xrce] [35m[1788939023.671431][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x804(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.671531][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x804(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.672635][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x804(6), subscriber_id: 0x804(4)
+[xrce] [35m[1788939023.675523][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x805(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.675622][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x805(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.676606][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x805(6), subscriber_id: 0x805(4)
+[xrce] [35m[1788939023.680066][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x806(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.680157][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x806(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.680804][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x806(6), subscriber_id: 0x806(4)
+[xrce] [35m[1788939023.684328][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x807(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.684414][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x807(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.684905][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x807(6), subscriber_id: 0x807(4)
+[xrce] [35m[1788939023.687822][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x808(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.687895][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x808(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.688440][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x808(6), subscriber_id: 0x808(4)
+[xrce] [35m[1788939023.691269][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x809(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.691348][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x809(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.691871][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x809(6), subscriber_id: 0x809(4)
+[xrce] [35m[1788939023.695751][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80A(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.695800][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80A(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.696338][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80A(6), subscriber_id: 0x80A(4)
+[xrce] [35m[1788939023.699264][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80B(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.699339][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80B(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.699967][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80B(6), subscriber_id: 0x80B(4)
+[xrce] [35m[1788939023.703133][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80C(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.703221][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80C(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.703836][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80C(6), subscriber_id: 0x80C(4)
+[xrce] [35m[1788939023.706622][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80D(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.706710][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80D(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.707357][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80D(6), subscriber_id: 0x80D(4)
+[xrce] [35m[1788939023.710162][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80E(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.710223][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80E(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.710859][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80E(6), subscriber_id: 0x80E(4)
+[xrce] [35m[1788939023.715308][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x80F(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.715402][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x80F(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.716122][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x80F(6), subscriber_id: 0x80F(4)
+[xrce] [35m[1788939023.719234][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x810(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.719299][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x810(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.719753][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x810(6), subscriber_id: 0x810(4)
+[xrce] [35m[1788939023.722826][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x811(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.722875][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x811(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.723295][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x811(6), subscriber_id: 0x811(4)
+[xrce] [35m[1788939023.726283][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x812(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.726324][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x812(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.726780][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x812(6), subscriber_id: 0x812(4)
+[xrce] [35m[1788939023.729661][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x813(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.729731][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x813(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.730380][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x813(6), subscriber_id: 0x813(4)
+[xrce] [35m[1788939023.733291][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x814(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.733347][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x814(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.733912][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x814(6), subscriber_id: 0x814(4)
+[xrce] [35m[1788939023.736910][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x815(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.736954][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x815(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.737466][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x815(6), subscriber_id: 0x815(4)
+[xrce] [35m[1788939023.740488][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x816(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.740555][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x816(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.741116][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x816(6), subscriber_id: 0x816(4)
+[xrce] [35m[1788939023.746083][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x817(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.746156][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x817(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.746751][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x817(6), subscriber_id: 0x817(4)
+[xrce] [35m[1788939023.749735][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x818(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.749805][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x818(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.750418][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x818(6), subscriber_id: 0x818(4)
+[xrce] [35m[1788939023.753469][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x819(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.753533][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x819(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.754051][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x819(6), subscriber_id: 0x819(4)
+[xrce] [35m[1788939023.756986][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x81A(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.757029][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x00000001, subscriber_id: 0x81A(4), participant_id: 0x001(1)
+[xrce] [35m[1788939023.757552][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x00000001, datareader_id: 0x81A(6), subscriber_id: 0x81A(4)
+[xrce] [35m[1788939023.760592][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x0C6(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.760688][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x0C6(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.761455][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x0C6(5), publisher_id: 0x0C6(3)
+[xrce] [35m[1788939023.764608][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x011(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.764659][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x011(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.765182][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x011(5), publisher_id: 0x011(3)
+[xrce] [35m[1788939023.767767][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x096(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.767821][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x096(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.768260][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x096(5), publisher_id: 0x096(3)
+[xrce] [35m[1788939023.770767][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x014(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.770815][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x014(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.771339][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x014(5), publisher_id: 0x014(3)
+[xrce] [35m[1788939023.775518][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x01B(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.775564][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x01B(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.775990][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x01B(5), publisher_id: 0x01B(3)
+[xrce] [35m[1788939023.778994][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x055(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.779038][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x055(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.779445][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x055(5), publisher_id: 0x055(3)
+[xrce] [35m[1788939023.781975][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x05B(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.782037][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x05B(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.782531][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x05B(5), publisher_id: 0x05B(3)
+[xrce] [35m[1788939023.785239][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x08D(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.785300][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x08D(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.785759][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x08D(5), publisher_id: 0x08D(3)
+[xrce] [35m[1788939023.788731][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x093(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.788776][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x093(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.789264][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x093(5), publisher_id: 0x093(3)
+[xrce] [35m[1788939023.792146][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x0B9(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.792207][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x0B9(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.792983][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x0B9(5), publisher_id: 0x0B9(3)
+[xrce] [35m[1788939023.795884][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x0D9(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.795954][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x0D9(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.796543][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x0D9(5), publisher_id: 0x0D9(3)
+[xrce] [35m[1788939023.799251][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x0F0(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.799323][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x0F0(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.799889][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x0F0(5), publisher_id: 0x0F0(3)
+[xrce] [35m[1788939023.803664][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x10C(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.803748][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x10C(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.804357][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x10C(5), publisher_id: 0x10C(3)
+[xrce] [35m[1788939023.806986][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x0FF(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.807059][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x0FF(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.807566][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x0FF(5), publisher_id: 0x0FF(3)
+[xrce] [35m[1788939023.810299][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x106(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.810348][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x106(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.810827][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x106(5), publisher_id: 0x106(3)
+[xrce] [35m[1788939023.815823][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x103(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.815884][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x103(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.816403][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x103(5), publisher_id: 0x103(3)
+[xrce] [35m[1788939023.852966][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x107(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.853167][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x107(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.854064][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x107(5), publisher_id: 0x107(3)
+[xrce] [35m[1788939023.856744][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x109(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.856805][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x109(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.857493][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x109(5), publisher_id: 0x109(3)
+[xrce] [35m[1788939023.860243][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x10D(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.860326][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x10D(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.860982][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x10D(5), publisher_id: 0x10D(3)
+[xrce] [35m[1788939023.864535][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x112(2), participant_id: 0x001(1)
+[xrce] [35m[1788939023.864590][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x112(3), participant_id: 0x001(1)
+[xrce] [35m[1788939023.865242][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x112(5), publisher_id: 0x112(3)
+[xrce] [35m[1788939024.045790][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x117(2), participant_id: 0x001(1)
+[xrce] [35m[1788939024.045974][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x117(3), participant_id: 0x001(1)
+[xrce] [35m[1788939024.047391][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x117(5), publisher_id: 0x117(3)
+[xrce] [35m[1788939024.050754][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x00E(2), participant_id: 0x001(1)
+[xrce] [35m[1788939024.050957][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x00E(3), participant_id: 0x001(1)
+[xrce] [35m[1788939024.052687][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x00E(5), publisher_id: 0x00E(3)
+[xrce] [35m[1788939024.055732][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x120(2), participant_id: 0x001(1)
+[xrce] [35m[1788939024.055832][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x120(3), participant_id: 0x001(1)
+[xrce] [35m[1788939024.056591][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x120(5), publisher_id: 0x120(3)
+[xrce] [35m[1788939024.059391][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x00000001, topic_id: 0x07B(2), participant_id: 0x001(1)
+[xrce] [35m[1788939024.059532][m info     | [34mProxyClient.cpp   [m | [37mcreate_publisher        [m | [32mpublisher created[m      | client_key: 0x00000001, publisher_id: 0x07B(3), participant_id: 0x001(1)
+[xrce] [35m[1788939024.061079][m info     | [34mProxyClient.cpp   [m | [37mcreate_datawriter       [m | [32mdatawriter created[m     | client_key: 0x00000001, datawriter_id: 0x07B(5), publisher_id: 0x07B(3)
+[xrce] [35m[1788939024.068438][m info     | [34mProxyClient.cpp   [m | [37mcreate_replier          [m | [32mreplier created[m        | client_key: 0x00000001, requester_id: 0x800(7), participant_id: 0x001(1)
+[camera] [INFO] [1788939034.523416422] [usb_cam]: camera_name value: default_cam
+[camera] [WARN] [1788939034.523771278] [usb_cam]: framerate: 30.000000
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1788939034.534764484] [usb_cam]: camera calibration URL: file:///home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[camera] [WARN] [1788939034.536604461] [usb_cam]: [default_cam] does not match usb_cam in file /home/sasllab/Desktop/kasa_project/camera_calibration.yaml
+[WARN] [camera] 확인 필요 (경고) - 로그 참고
+[camera] [INFO] [1788939034.536731536] [usb_cam]: Starting 'default_cam' (/dev/video0) at 1280x720 via mmap (mjpeg2rgb) at 30 FPS
+[camera] terminate called after throwing an instance of 'char*'
+[camera] [프로세스 종료됨]
+[qgc] qt.multimedia.symbolsresolver: Couldn't load pipewire-0.3 library
+[qgc] qt.multimedia.symbolsresolver: Couldn't resolve pipewire-0.3 symbols
+[qgc] Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+[qgc] Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+[qgc] If this causes problems, reconfigure your locale. See the locale(1) manual
+[qgc] for more information.
+[qgc] Error: A second instance of QGroundControl is already running. Please close the other instance and try again.
+[ERR] [qgc] 확인 필요 (알려지지 않은 오류) - 로그 참고
+[qgc] [프로세스 종료됨]
+[qgc] qt.multimedia.symbolsresolver: Couldn't load pipewire-0.3 library
+[qgc] qt.multimedia.symbolsresolver: Couldn't resolve pipewire-0.3 symbols
+[qgc] Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+[qgc] Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+[qgc] If this causes problems, reconfigure your locale. See the locale(1) manual
+[qgc] for more information.
+[qgc] API.QGCApplication: Qt lib localization for "C" is not present
+[qgc]      0.049 Using Qt multimedia with FFmpeg version 7.1.3 LGPL version 2.1 or later - qt.multimedia.ffmpeg - (unknown:0)
+[mission] [INFO] [1788939190.434089504] [search_phase_node]: 탐색 페이즈 시작 — 방문 순서 28칸, 목표 마커 4개
+[mission] [프로세스 종료됨]
+[qgc]    279.794 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    279.794 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    279.826 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    280.376 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    280.521 Warning: Locale "C" not found in translation json for "COMP_METADATA_TYPE_PARAMETER" - ComponentInformation.ComponentInformationTranslation - (ComponentInformationTranslation::getUrlFromSummaryJson:62)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    280.697 Warning: Locale "C" not found in translation json for "COMP_METADATA_TYPE_EVENTS" - ComponentInformation.ComponentInformationTranslation - (ComponentInformationTranslation::getUrlFromSummaryJson:62)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    297.449 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    301.767 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    304.449 Warning: "Giving up sending command after max retries: MAV_CMD_REQUEST_MESSAGE requesting: GIMBAL_MANAGER_INFORMATION" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    308.462 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    327.060 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    329.478 Warning: "Giving up sending command after max retries: MAV_CMD_REQUEST_MESSAGE requesting: GIMBAL_MANAGER_INFORMATION" - Vehicle.MavCommandQueue - (MavCommandQueue::_sendFromList:358)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    331.485 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.181 Warning: AudioOutput not initialized. Call init() before using say(). - Utilities.AudioOutput - (unknown:0)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    337.357 Warning: Events got lost: 28 comp_id: 1 - MAVLink.LibEvents.EventHandler - (EventHandler::Impl::Impl(EventHandler*, const QString&, EventHandler::handle_event_f, EventHandler::send_request_event_message_f, uint8_t, uint8_t, uint8_t, uint8_t)::<lambda(int)>:29)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[qgc]    350.451 Warning: Stopping actuator due to timeout: 0 - Vehicle.Actuators.ActuatorTesting - (ActuatorTesting::ActuatorTest::watchdogTimeout:67)
+[WARN] [qgc] 확인 필요 (경고) - 로그 참고
+[reboot] Pixhawk 재부팅 명령 전송됨
+[xrce] [프로세스 종료됨]
+[xrce] [35m[1788939897.458879][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1788939897.459499][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4

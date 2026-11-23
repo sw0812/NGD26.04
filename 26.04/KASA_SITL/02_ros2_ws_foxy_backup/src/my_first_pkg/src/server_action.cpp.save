@@ -1,0 +1,53 @@
+#include <chrono>
+#include <memory>
+#include <thread>
+
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_action/rclcpp_action.hpp"
+
+#include "my_first_pkg/action/countdown.hpp"
+
+using namespace std::chrono_literals;
+
+class ActionServer : public rclcpp::Node
+{
+public:
+  using Countdown = my_first_pkg::action::Countdown;
+  using GoalHandleCountdown =
+   rclcpp_action::ServerGoalHandle<Countdown>;
+
+ ActionServer()
+  : Node("action_server")
+{
+  action_server_ = rclcpp_action::create_server<Countdown>(
+   this,
+   "countdown",
+        std::bind(
+            &ActionServer::handle_goal,
+            this,
+            std::placeholders::_1,
+            std::placeholders::_2),
+        std::bind(
+            &ActionServer::handle_cancel,
+            this,
+            std::placeholders::_1),
+        std::bind(
+            &ActionServer::handle_accepted,
+            this,
+            std::placeholders::_1));
+}
+
+private:
+ rclcpp_action::Server<Countdown>::SharedPtr action_server_;
+ rclcpp_action::GoalResponse handle_goal(
+  const rclcpp_action::GoalUUID &,
+  std::shared_ptr<const Countdown::Goal>goal)
+ 
+{
+ RCLCPP_INFO(
+  this->get_logger(),
+  "Goal received : %d",
+  goal->target);
+
+ return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
+}

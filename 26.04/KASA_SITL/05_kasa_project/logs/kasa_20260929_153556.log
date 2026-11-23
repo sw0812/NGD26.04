@@ -1,0 +1,97 @@
+=== KASA 정밀착륙 제어판 로그 시작 2026-09-29 15:35:56 ===
+[xrce] [35m[1790663756.845307][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[xrce] [35m[1790663756.845878][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 4
+[xrce] [프로세스 종료됨]
+[mission] [INFO] [1790664302.185651692] [search_phase_node]: 탐색 페이즈 시작 — 방문 순서 28칸, 목표 마커 4개
+[mission] [INFO] [1790664327.969470187] [search_phase_node]: [SEARCH] 교차점 도달 (1,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664331.371323504] [search_phase_node]: ArUco ID1 확정 @ grid(1, 0) world(8.0, 5.0) — 총 1/4
+[mission] [INFO] [1790664331.371992230] [search_phase_node]: [SEARCH] 교차점 도달 (2,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664335.083390296] [search_phase_node]: [SEARCH] 교차점 도달 (3,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664338.871442860] [search_phase_node]: [SEARCH] 교차점 도달 (4,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664341.287346594] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,0)
+[mission] [INFO] [1790664342.787548921] [search_phase_node]: [SEARCH] 교차점 도달 (5,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664346.895636152] [search_phase_node]: [SEARCH] 교차점 도달 (6,0) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664349.381263398] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,0)
+[mission] [INFO] [1790664351.402935770] [search_phase_node]: [SEARCH] 교차점 도달 (6,1) -> LEFT -> heading=N
+[mission] [INFO] [1790664355.381191263] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,1)
+[mission] [INFO] [1790664357.209373835] [search_phase_node]: [SEARCH] 교차점 도달 (5,1) -> LEFT -> heading=W
+[mission] [INFO] [1790664362.031522120] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,1)
+[mission] [INFO] [1790664363.608910257] [search_phase_node]: [SEARCH] 교차점 도달 (4,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664366.031163732] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,1)
+[mission] [INFO] [1790664367.612452158] [search_phase_node]: ArUco ID3 확정 @ grid(4, 1) world(17.0, 8.0) — 총 2/4
+[mission] [INFO] [1790664367.613073107] [search_phase_node]: [SEARCH] 교차점 도달 (3,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664370.031181450] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,1)
+[mission] [INFO] [1790664371.623433314] [search_phase_node]: [SEARCH] 교차점 도달 (2,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664373.981268153] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,1)
+[mission] [INFO] [1790664376.027538974] [search_phase_node]: [SEARCH] 교차점 도달 (1,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664378.481001105] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,1)
+[mission] [INFO] [1790664380.325798820] [search_phase_node]: [SEARCH] 교차점 도달 (0,1) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664382.731334067] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (0,1)
+[mission] [INFO] [1790664384.224627933] [search_phase_node]: [SEARCH] 교차점 도달 (0,2) -> RIGHT -> heading=N
+[mission] [INFO] [1790664388.731008878] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (0,2)
+[mission] [INFO] [1790664390.938335320] [search_phase_node]: [SEARCH] 교차점 도달 (1,2) -> RIGHT -> heading=E
+[mission] [INFO] [1790664395.631122110] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,2)
+[mission] [INFO] [1790664397.063787003] [search_phase_node]: [SEARCH] 교차점 도달 (2,2) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664399.431291598] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,2)
+[mission] [INFO] [1790664401.260943491] [search_phase_node]: [SEARCH] 교차점 도달 (3,2) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664403.682063318] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,2)
+[mission] [INFO] [1790664405.672642478] [search_phase_node]: [SEARCH] 교차점 도달 (4,2) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664408.081190716] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,2)
+[mission] [INFO] [1790664409.962133602] [search_phase_node]: [SEARCH] 교차점 도달 (5,2) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664412.431024048] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,2)
+[mission] [INFO] [1790664414.386065158] [search_phase_node]: [SEARCH] 교차점 도달 (6,2) -> STRAIGHT -> heading=E
+[mission] [INFO] [1790664416.782548759] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,2)
+[mission] [INFO] [1790664418.693582900] [search_phase_node]: [SEARCH] 교차점 도달 (6,3) -> LEFT -> heading=N
+[mission] [INFO] [1790664423.381162718] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,3)
+[mission] [INFO] [1790664424.894044103] [search_phase_node]: ArUco ID4 확정 @ grid(6, 3) world(23.0, 14.0) — 총 3/4
+[mission] [INFO] [1790664424.894756385] [search_phase_node]: [SEARCH] 교차점 도달 (5,3) -> LEFT -> heading=W
+[mission] [INFO] [1790664429.531291934] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,3)
+[mission] [INFO] [1790664431.615272206] [search_phase_node]: [SEARCH] 교차점 도달 (4,3) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664434.231173849] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,3)
+[mission] [INFO] [1790664435.918057864] [search_phase_node]: [SEARCH] 교차점 도달 (3,3) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664438.481246297] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,3)
+[mission] [INFO] [1790664440.730251797] [search_phase_node]: [SEARCH] 교차점 도달 (2,3) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664443.181322207] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,3)
+[mission] [INFO] [1790664445.028088367] [search_phase_node]: ArUco ID2 확정 @ grid(2, 3) world(11.0, 14.0) — 총 4/4
+[mission] [INFO] [1790664445.028679396] [search_phase_node]: [SEARCH] 교차점 도달 (1,3) -> STRAIGHT -> heading=W
+[mission] [INFO] [1790664445.029162038] [search_phase_node]: 마커 전부 확정 — 지그재그 중단. 구조 경로(역순): [4, 3, 2, 1]
+[mission] [INFO] [1790664447.431201110] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,3)
+[mission] [INFO] [1790664449.728366854] [search_phase_node]: [VISIT_ORDERED] UTURN -> heading=E
+[mission] [INFO] [1790664456.131338185] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,3)
+[mission] [INFO] [1790664457.942619799] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=E
+[mission] [INFO] [1790664460.380917238] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,3)
+[mission] [INFO] [1790664461.946021199] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=E
+[mission] [INFO] [1790664464.431070410] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,3)
+[mission] [INFO] [1790664465.946910193] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=E
+[mission] [INFO] [1790664468.430986671] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,3)
+[mission] [INFO] [1790664469.961843995] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=E
+[mission] [INFO] [1790664472.381353604] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (6,3)
+[mission] [INFO] [1790664474.253487520] [search_phase_node]: [VISIT_ORDERED] UTURN -> heading=W
+[mission] [INFO] [1790664480.781517770] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (5,3)
+[mission] [INFO] [1790664482.574432893] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=W
+[mission] [INFO] [1790664485.031437466] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,3)
+[mission] [INFO] [1790664486.574415507] [search_phase_node]: [VISIT_ORDERED] LEFT -> heading=S
+[mission] [INFO] [1790664491.331337942] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (4,2)
+[mission] [INFO] [1790664493.088926265] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=S
+[mission] [INFO] [1790664497.499041093] [search_phase_node]: [VISIT_ORDERED] RIGHT -> heading=W
+[mission] [INFO] [1790664502.183749705] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (3,1)
+[mission] [INFO] [1790664503.896251355] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=W
+[mission] [INFO] [1790664506.331204636] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,1)
+[mission] [INFO] [1790664508.092948427] [search_phase_node]: [VISIT_ORDERED] RIGHT -> heading=N
+[mission] [INFO] [1790664512.931185282] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,2)
+[mission] [INFO] [1790664514.501880169] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=N
+[mission] [INFO] [1790664516.981243797] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (2,3)
+[mission] [INFO] [1790664518.611852703] [search_phase_node]: [VISIT_ORDERED] LEFT -> heading=W
+[mission] [INFO] [1790664523.031335927] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,3)
+[mission] [INFO] [1790664525.018238665] [search_phase_node]: [VISIT_ORDERED] LEFT -> heading=S
+[mission] [INFO] [1790664531.134948586] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=S
+[mission] [INFO] [1790664533.531542216] [search_phase_node]: [게이팅] 비전 미검출 -> 위치 기준 강제 도달 판정 (1,1)
+[mission] [INFO] [1790664535.439475646] [search_phase_node]: [VISIT_ORDERED] STRAIGHT -> heading=S
+[mission] [INFO] [1790664537.931594229] [search_phase_node]: [LANDING] 순회 완료 — 버티포트(0,0)로 복귀 후 착륙 시작
+[mission] [INFO] [1790664543.480959410] [search_phase_node]: [LANDING] 목표 마커 근접 — 시각 서보 정렬 시작
+[mission] [INFO] [1790664561.581030152] [search_phase_node]: [LANDING] 고도 0.48m 미만 (정렬됨) -> 최종 착륙
+[mission] [INFO] [1790664565.331481861] [search_phase_node]: [LANDING] 고도 0.05m 이하 -> 강제 disarm
+[mission] [INFO] [1790664565.332116668] [search_phase_node]: [SUMMARY] ID1: grid(1,0) world(8.00, 5.00)
+[mission] [INFO] [1790664565.332584365] [search_phase_node]: [SUMMARY] ID2: grid(2,3) world(11.00, 14.00)
+[mission] [INFO] [1790664565.333005660] [search_phase_node]: [SUMMARY] ID3: grid(4,1) world(17.00, 8.00)
+[mission] [INFO] [1790664565.333412811] [search_phase_node]: [SUMMARY] ID4: grid(6,3) world(23.00, 14.00)
