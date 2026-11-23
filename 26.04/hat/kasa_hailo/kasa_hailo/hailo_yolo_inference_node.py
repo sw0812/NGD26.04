@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""yolo_inference_node.py 의 Hailo-10H(HailoRT) 버전.
-ultralytics/torch 추론만 HEF(NPU) 추론으로 교체했고, depth 렌더링 -> 3D 역투영 -> NED 변환 ->
+"""yolo_inference_node.py 의 Hailo-10H 버전 (컨테이너 ROS 노드 = 소켓 클라이언트).
+HailoRT 는 호스트(Pi OS)의 hailo_server(pi_deploy/hailo_server)가 쥐고 있고, 이 노드는 letterbox 한 이미지를
+localhost TCP 로 보내 NMS 결과를 받는다 (ROS 컨테이너 파이썬과 Hailo 바인딩 파이썬 버전이 달라도 되도록).
+ultralytics/torch 추론만 NPU 추론으로 교체했고, depth 렌더링 -> 3D 역투영 -> NED 변환 ->
 /landing_target 발행 로직은 원본(01_ros2_ws_2604_MAIN/.../yolo_inference_node.py)과 동일하다.
 
 전제: HEF를 NMS 후처리 포함(nms_postprocess)으로 컴파일 (compile_hef.sh). 입력 imgsz x imgsz RGB uint8,
@@ -9,6 +11,9 @@ ultralytics/torch 추론만 HEF(NPU) 추론으로 교체했고, depth 렌더링 
   로그로 찍는다. 다르면 parse_nms() 만 고치면 된다.
 """
 import math
+import socket
+import struct
+import time
 import numpy as np
 import cv2
 import rclpy
@@ -18,8 +23,6 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import PointStamped
 from px4_msgs.msg import VehicleLocalPosition
 
-from hailo_platform import VDevice, FormatType   # HailoRT python (pip/deb: hailort)
-
 PX4_QOS = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT, durability=DurabilityPolicy.VOLATILE,
                      history=HistoryPolicy.KEEP_LAST, depth=5)
 
@@ -28,7 +31,7 @@ class HailoYoloInferenceNode(Node):
     def __init__(self):
         super().__init__('yolo_inference_node')
         P = self.declare_parameter
-        P('hef_path', '/home/pi/landing_pad.hef')
+        P('server_host', '127.0.0.1'); P('server_port', 5555)
         P('imgsz', 640)
         P('depth_topic', '/depth/image')
         P('local_pos_topic', '/fmu/out/vehicle_local_position_v1')
@@ -46,14 +49,10 @@ class HailoYoloInferenceNode(Node):
         self.render_min, self.render_max = float(g('render_min')), float(g('render_max'))
         self.lidar_off = (float(g('lidar_offset_x')), float(g('lidar_offset_y')), float(g('lidar_offset_z')))
 
-        # --- Hailo 초기화 ---
-        self.vdevice = VDevice()
-        self.infer_model = self.vdevice.create_infer_model(g('hef_path'))
-        self.infer_model.input().set_format_type(FormatType.UINT8)
-        self.infer_model.output().set_format_type(FormatType.FLOAT32)
-        self.configured = self.infer_model.configure().__enter__()
-        self.out_shape = self.infer_model.output().shape
-        self.get_logger().info(f'Hailo HEF 로드: {g("hef_path")} output shape={self.out_shape}')
+        # --- hailo_server 연결 (헤더: imgsz, 출력 float 개수) ---
+        self.sock = None
+        self.host, self.port = g('server_host'), int(g('server_port'))
+        self.connect()
 
         self.drone_x = self.drone_y = self.drone_z = self.drone_yaw = 0.0
         self.have_local_pos = False
@@ -92,6 +91,30 @@ class HailoYoloInferenceNode(Node):
         c, s = math.cos(self.drone_yaw), math.sin(self.drone_yaw)
         return (self.drone_x + xf * c - yf * s, self.drone_y + xf * s + yf * c, self.drone_z + zf)
 
+    # ---------- Hailo 서버 통신 ----------
+    def _recvn(self, n):
+        buf = bytearray()
+        while len(buf) < n:
+            c = self.sock.recv(n - len(buf))
+            if not c:
+                raise ConnectionError('hailo_server 연결 끊김')
+            buf += c
+        return bytes(buf)
+
+    def connect(self):
+        while rclpy.ok():
+            try:
+                self.sock = socket.create_connection((self.host, self.port), timeout=5)
+                self.sock.settimeout(2.0)
+                srv_imgsz, self.out_len = struct.unpack('<II', self._recvn(8))
+                if srv_imgsz != self.imgsz:
+                    self.get_logger().warn(f'서버 imgsz={srv_imgsz} 로 맞춤 (파라미터 {self.imgsz})')
+                    self.imgsz = srv_imgsz
+                self.get_logger().info(f'hailo_server 연결: imgsz={self.imgsz} 출력 float {self.out_len}개')
+                return
+            except OSError as e:
+                self.get_logger().warn(f'hailo_server 대기 중 ({e})'); self.sock = None; time.sleep(2.0)
+
     # ---------- Hailo 전용 ----------
     def letterbox(self, img):
         h, w = img.shape[:2]
@@ -115,11 +138,11 @@ class HailoYoloInferenceNode(Node):
     def detect(self, render_gray):
         rgb = cv2.cvtColor(render_gray, cv2.COLOR_GRAY2RGB)
         inp, s, left, top = self.letterbox(rgb)
-        bindings = self.configured.create_bindings()
-        bindings.input().set_buffer(np.ascontiguousarray(inp))
-        out = np.empty(self.out_shape, dtype=np.float32)
-        bindings.output().set_buffer(out)
-        self.configured.run([bindings], 1000)
+        try:
+            self.sock.sendall(np.ascontiguousarray(inp).tobytes())
+            out = np.frombuffer(self._recvn(self.out_len * 4), dtype=np.float32)
+        except (OSError, ConnectionError) as e:
+            self.get_logger().warn(f'추론 실패({e}), 재연결'); self.connect(); return None
         dets = [d for d in self.parse_nms(out) if d[0] >= self.conf_th]
         if not dets:
             return None

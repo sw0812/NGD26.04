@@ -9,23 +9,34 @@
 | YOLOv8n landing_pad 추론 (`kasa_hailo/hailo_yolo_inference_node`) | **Hailo-10H NPU** | 신경망 |
 | ArUco 검출 (`aruco_opencv`), 라인 검출/오도메트리, `search_phase_node` 미션 FSM, depth_map/landing 노드 | Pi CPU | 고전 CV·제어 로직. NPU 대상 아님 |
 
+## 구조 (2026-11 개정: 깡통 Pi 원커맨드 설치용)
+```
+Raspberry Pi OS Trixie 64-bit (호스트)
+ ├─ Hailo-10H 드라이버/런타임  : apt  dkms + hailo-h10-all   (공식 지원 경로)
+ ├─ hailo-server (systemd)     : HEF 로드, 127.0.0.1:5555 로 추론 제공 (ROS 없음)
+ └─ Docker 컨테이너 kasa-ros   : ROS 2 Jazzy + px4_msgs + aruco_opencv + KASA 노드 (--net=host, --privileged)
+      └─ hailo_yolo_inference_node --TCP--> hailo-server
+```
+ROS 바이너리는 Pi OS용이 없고 Hailo 바인딩은 Pi OS(시스템 파이썬)용만 공식 지원이라 둘을 분리했다.
+
+## 깡통 Pi 설치 순서
+1. (PC) Raspberry Pi Imager 로 **Raspberry Pi OS (64-bit, Trixie)** 설치. 고급 설정에서 호스트명/사용자/Wi-Fi/SSH 지정. AI HAT+ 2 를 Pi 5 에 장착(전원 끈 상태).
+2. (PC, x86) `model_convert/` 로 `landing_pad.hef` 생성 → Pi 의 `/opt/kasa/landing_pad.hef` 로 복사 (scp 후 sudo mv).
+3. (Pi) `sudo apt install -y git && git clone https://github.com/sw0812/NGD26.04.git ~/NGD26.04`
+4. (Pi) `PX4_MSGS_BRANCH=<펌웨어 맞는 브랜치> bash ~/NGD26.04/26.04/hat/pi_deploy/bootstrap.sh` → 안내대로 `sudo reboot` → **같은 명령 한 번 더**
+5. (Pi) `bash ~/NGD26.04/26.04/hat/pi_deploy/check_pi.sh` (전 항목 OK 확인) → `kasa-run mission | landing | all`
+
 ## 구성
 - `model_convert/` (x86 PC): `export_onnx.py` → `make_calib.py` → `compile_hef.sh` → `landing_pad.hef`
-- `kasa_hailo/` (ROS 2 ament_python 패키지): Hailo 추론 노드, `hailo_landing.launch.py`, 카메라/ArUco 설정
-- `pi_deploy/`: `install_pi.sh`(워크스페이스+의존성), `run_stack_pi.sh [mission|landing|all]`
-
-## 순서
-1. x86 PC: `python3 model_convert/export_onnx.py ../KASA_SITL/08_datasets_models/best.pt 640`
-2. x86 PC: `python3 model_convert/make_calib.py <lidar_dataset_yolo/images/train> calib_set.npy 640`
-3. x86 PC(+Hailo DFC): `model_convert/compile_hef.sh best.onnx calib_set.npy` (`--hw-arch hailo10h`) → `landing_pad.hef` 을 Pi로
-4. Pi: Hailo 런타임 설치 확인(`hailortcli fw-control identify`), `PX4_MSGS_BRANCH=<펌웨어 맞는 브랜치> pi_deploy/install_pi.sh`
-5. Pi: `HEF=~/landing_pad.hef pi_deploy/run_stack_pi.sh all`
+- `kasa_hailo/` (ROS 2 패키지): 추론 클라이언트 노드, `hailo_landing.launch.py`, 카메라/ArUco 설정
+- `pi_deploy/`: `bootstrap.sh`, `check_pi.sh`, `hailo_server/`(서버+systemd), `docker/Dockerfile`, `run_stack_pi.sh`
 
 ## 먼저 확인할 위험 요소
-1. **OS/ROS**: 스크립트는 Ubuntu 24.04 + Jazzy 가정. Raspberry Pi OS는 ROS 바이너리가 없고, Ubuntu는 Hailo 패키지를 수동 설치해야 함(`hailo-h10-all` 등 패키지명은 Pi 문서로 확인).
-2. **컴파일**: `compile_hef.sh` 의 끝단 노드·NMS `convNN` 이름은 모델별로 다름 — parser 로그/netron 으로 맞출 것. 학습 imgsz 와 export imgsz 불일치 주의(`best.pt` 의 imgsz 는 torch 없이 못 읽음, 640 가정).
-3. **정확도**: HEF 결과를 같은 이미지로 ONNX/PT 와 비교(INT8 양자화 손실). 패드 프레임이 적으면 캘리브레이션 품질 하락.
-4. **NMS 출력**: `parse_nms()` 는 HailoRT 버전별 형식 가정 — 첫 실행 로그의 output shape 보고 수정.
-5. **하드웨어**: 기존 카메라 설정은 Jetson+C270 기준(`c270_usb_cam.yaml`). Pi에서 `/dev/video0` 번호/MJPG·YUYV 동작 확인. 전방 카메라(`use_front_cam`)는 두 번째 카메라가 있을 때만.
-6. **px4_msgs**: 기체 PX4 펌웨어 버전과 브랜치가 맞아야 함. XRCE-DDS 에이전트와 `ROS_DOMAIN_ID` 도 맞출 것.
-7. **성능**: Pi CPU 에서 ArUco+라인오도메트리+미션 노드가 시뮬 FPS(≈카메라 30Hz)를 유지하는지 측정 필요.
+1. **Hailo 장치 인식**: 커뮤니티에 Trixie 에서 FW 로드 실패·구 `hailo_pci` 드라이버 충돌 보고가 있음. 안 뜨면 `dmesg | grep -i hailo`. `hailortcli` 는 H10 apt 패키지에 없을 수 있어 점검은 파이썬 `VDevice()` 로 함.
+2. **컴파일**: `compile_hef.sh` 의 끝단 노드·NMS `convNN` 이름은 모델별로 다름. 학습 imgsz 와 export imgsz 불일치 주의(`best.pt` imgsz 는 torch 없이 못 읽음, 640 가정).
+3. **NMS 출력**: `parse_nms()` 는 HailoRT 버전별 형식 가정 — 서버 로그의 `output=` shape 보고 수정. (서버는 출력 버퍼 1개 가정)
+4. **정확도**: HEF 결과를 같은 이미지로 ONNX/PT 와 비교(INT8 손실).
+5. **하드웨어**: 카메라 설정은 Jetson+C270 기준. `/dev/video0` 번호·YUYV 동작 확인. 전방 카메라는 두 번째 카메라가 있을 때만.
+6. **px4_msgs**: 펌웨어 버전과 브랜치 일치 필수. XRCE-DDS 에이전트(`MicroXRCEAgent`)와 `ROS_DOMAIN_ID` 도 맞출 것 (현재 에이전트 설치/기동은 이 스크립트에 없음).
+7. **성능**: 컨테이너(Jazzy on arm64) 위 ArUco+라인오도메트리+미션 노드가 카메라 30Hz 를 유지하는지 측정 필요.
+8. `--privileged -v /dev:/dev` 는 편의상 넓게 열어둔 것. 안정화 후 `--device` 로 좁힐 것.

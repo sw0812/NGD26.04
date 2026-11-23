@@ -1,0 +1,12 @@
+[Unit]
+Description=KASA Hailo-10H inference server
+After=multi-user.target
+ConditionPathExists=/opt/kasa/landing_pad.hef
+
+[Service]
+ExecStart=/usr/bin/python3 -u /opt/kasa/hailo_server.py /opt/kasa/landing_pad.hef 5555
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

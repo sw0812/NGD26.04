@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 실기체(Pi) 스택. sim_tools/mission_stack.sh 의 실기 버전: gz bridge 대신 USB 카메라(usb_cam).
-# 사용: HEF=/home/pi/landing_pad.hef ./run_stack_pi.sh [mission|landing|all]
+# 사용(컨테이너 안): run_stack_pi.sh [mission|landing|all]   (landing 은 호스트 hailo_server 필요)
 set -u
 MODE=${1:-mission}
 ROS_DISTRO=${ROS_DISTRO:-jazzy}; WS=${WS:-$HOME/kasa_ws}
@@ -9,7 +9,6 @@ source /opt/ros/$ROS_DISTRO/setup.bash; source $WS/install/setup.bash
 export ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-42}            # 시뮬과 동일 격리 규칙 (ros-domain-isolation)
 export ROS_AUTOMATIC_DISCOVERY_RANGE=${ROS_AUTOMATIC_DISCOVERY_RANGE:-LOCALHOST}
 CFG=$(ros2 pkg prefix kasa_hailo)/share/kasa_hailo/config
-HEF=${HEF:-$HOME/landing_pad.hef}
 LOGD=${LOGD:-$HOME/logs/$(date +%F_%H%M)}; mkdir -p $LOGD
 trap 'kill $(jobs -p) 2>/dev/null' EXIT
 
@@ -25,6 +24,6 @@ if [ "$MODE" != landing ]; then
   (cd $MP && python3 -u search_phase_node.py --ros-args -p n_markers_expected:=4 -p use_front_cam:=false > $LOGD/mission_node.log 2>&1 &)
 fi
 if [ "$MODE" != mission ]; then
-  ros2 launch kasa_hailo hailo_landing.launch.py hef_path:=$HEF &
+  ros2 launch kasa_hailo hailo_landing.launch.py &
 fi
 wait
