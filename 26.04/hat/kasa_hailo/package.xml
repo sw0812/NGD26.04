@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>kasa_hailo</name>
+  <version>0.1.0</version>
+  <description>Hailo-10H(NPU) YOLO landing-pad inference node + Raspberry Pi bring-up for KASA</description>
+  <maintainer email="saslab@users.noreply.github.com">saslab</maintainer>
+  <license>Apache-2.0</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>px4_msgs</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>
